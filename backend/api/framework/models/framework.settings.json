@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "framework",
+  "info": {
+    "name": "Framework"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "teaser": {
+      "type": "text",
+      "required": true
+    },
+    "caption": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "whoToUse": {
+      "type": "richtext",
+      "required": true
+    },
+    "theFramework": {
+      "type": "richtext"
+    },
+    "icon": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "type": {
+      "model": "type-of-framework",
+      "via": "frameworks"
+    }
+  }
+}

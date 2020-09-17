@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_of_frameworks",
+  "info": {
+    "name": "TypeOfFramework"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "frameworks": {
+      "via": "type",
+      "collection": "framework"
+    }
+  }
+}
