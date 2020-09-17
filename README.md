@@ -4,8 +4,9 @@ Starting to put together the different components that we will need to get this 
 
 ![The project](./frontend/src/images/desktopView.png)
 
-
 Check the [LIVE DEMO](https://ikit.netlify.app/) 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3eb7178d-ed48-4d43-86d5-b7ecb9360819/deploy-status)](https://app.netlify.com/sites/ikit/deploys)
 
 ## Dev Notes:
 
