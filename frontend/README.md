@@ -2,7 +2,7 @@
 
 Starting to put together the different components that we will need to get this up and running! 
 
-![The project](./src/images/desktopView.png)
+![The project](../frontend/src/images/desktopView.png)
 
 
 Check the [LIVE DEMO](https://ikit.netlify.app/) 
