@@ -1,8 +1,4 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: "Build Stuff",
@@ -32,7 +28,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`, //I know that I will need to implement the .env
+        apiURL:  process.env.GATSBY_STRAPI_API_URL || `http://localhost:1337`, //I know that I will need to implement the .env
         contentTypes: [`frameworks` , `type-of-frameworks`],
         queryLimit: 1000,
       },
