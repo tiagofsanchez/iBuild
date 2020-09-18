@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ["420px", "768px", "1024px","1440px"],
+  breakpoints: ["690px", "1100px","1440px"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     text: "black",
@@ -105,10 +105,19 @@ export default {
       color: "text",
       margin: [2, 2, 4],
     },
+    frameworkName: {
+      width: ["90%", "80%", "900px"],
+      margin: `auto`,
+      color: "text"
+    },
+    frameworkMain: {
+      width: ["90%", "80%", "800px"],
+      margin: "auto",
+      padding: 4,
+    },
     main: {
       width: ["90%", "80%", "90%"],
       margin: "auto",
-      bg: "background",
       padding: 4,
     },
     footer: {
