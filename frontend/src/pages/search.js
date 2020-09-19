@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui"
-import Layout from "../components/layout"
+import { jsx, Box } from "theme-ui";
+import Layout from "../components/layout";
 
-import Menu from "../components/menu"
-import FrameworkCard from "../components/ui/frameworkCard"
-import NewsletterForm from "../components/newsletterForm"
+import Menu from "../components/menu";
+import FrameworkCard from "../components/ui/frameworkCard";
+import { NewsletterForm } from "../components/newsletterForm";
 
 const Search = () => (
   <Layout withHero={true}>
@@ -35,6 +35,6 @@ const Search = () => (
       <p sx={{ variant: `text.caption` }}>Responsive for desktop and mobile</p>
     </section>
   </Layout>
-)
+);
 
-export default Search
+export default Search;

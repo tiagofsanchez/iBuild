@@ -4,10 +4,12 @@ import { useState } from "react"
 import styled from "@emotion/styled"
 
 import HeroHeader from "../components/ui/heroHeader"
-import Backdrop from "../components/ui/backdrop"
 import Menu from "./menu"
+import Backdrop from "../components/ui/backdrop"
+
 
 const LayoutContainer = styled.div`
+  position: relative;
   display: grid;
   grid-gap: 50px;
 `
@@ -31,6 +33,7 @@ const Layout = ({ children , withHero }) => {
           </header>
         </HeroContainer>
         <main>{children}</main>
+       
       </LayoutContainer>
       {isOpen && <Backdrop />}
     </div>

@@ -115,6 +115,9 @@ export default {
       margin: "auto",
       padding: 4,
     },
+    frameworkFooter: { 
+      width: ["90%", "80%", "900px"],
+    },
     main: {
       width: ["90%", "80%", "90%"],
       margin: "auto",

@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui"
-import Layout from "../components/layout"
-import { graphql, Link } from "gatsby"
+import { jsx, Box } from "theme-ui";
+import Layout from "../components/layout";
+import { graphql, Link } from "gatsby";
 
-import Menu from "../components/menu"
-import FrameworkCard from "../components/ui/frameworkCard"
-import NewsletterForm from "../components/newsletterForm"
+import Menu from "../components/menu";
+import FrameworkCard from "../components/ui/frameworkCard";
+import { NewsletterForm } from "../components/newsletterForm";
 
-const _ = require("lodash")
+const _ = require("lodash");
 
 const Index = ({ data }) => {
-  const { allStrapiTypeOfFrameworks, site } = data
-  const frameworkPath = site.siteMetadata.frameworkPath
-  console.log(allStrapiTypeOfFrameworks)
+  const { allStrapiTypeOfFrameworks, site } = data;
+  const frameworkPath = site.siteMetadata.frameworkPath;
+  console.log(allStrapiTypeOfFrameworks);
   return (
     <Layout withHero={true}>
       <section sx={{ variant: `layout.main` }}>
@@ -49,7 +49,7 @@ const Index = ({ data }) => {
         <p sx={{ variant: `text.caption`, mt: `0` }}>
           Strapi is the CMS that I am using for the project
         </p>
-        {allStrapiTypeOfFrameworks.edges.map(node => {
+        {allStrapiTypeOfFrameworks.edges.map((node) => {
           return (
             <div key={node.node.type}>
               <h4>{node.node.type}</h4>
@@ -62,12 +62,12 @@ const Index = ({ data }) => {
                 </Link>
               ))}
             </div>
-          )
+          );
         })}
       </section>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   {
@@ -88,6 +88,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Index
+export default Index;

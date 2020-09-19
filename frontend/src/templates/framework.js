@@ -5,7 +5,11 @@ import styled from "@emotion/styled";
 import ReactMarkdown from "react-markdown";
 
 import Layout from "../components/layout";
+import HeroFooter from "../components/ui/heroFooter";
+import About from "../components/aboutFooter";
+import FrameworkCard from "../components/ui/frameworkCard";
 import ProblemIcon from "../svgs/problemValidationBig.svg";
+import { LightNewsletterForm } from "../components/newsletterForm";
 
 const FrameworkHeader = styled.div`
   padding: 50px;
@@ -25,6 +29,17 @@ const Grid = styled.div`
     grid-template-columns: auto;
     justify-items: center;
   }
+`;
+
+const SignUpContainer = styled.div`
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 50;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 40px;
 `;
 
 const Framework = ({ pageContext, data }) => {
@@ -56,6 +71,14 @@ const Framework = ({ pageContext, data }) => {
         <h3>Framework explanation</h3>
         <ReactMarkdown source={strapiFrameworks.theFramework} />
       </section>
+      <section sx={{ variant: `layout.frameworkName` }}>
+        <FrameworkCard />
+      </section>
+      <SignUpContainer sx={{ variant: `layout.frameworkFooter` }}>
+        <LightNewsletterForm />
+        <About />
+      </SignUpContainer>
+      <HeroFooter />
     </Layout>
   );
 };
