@@ -72,7 +72,7 @@ const Framework = ({ pageContext, data }) => {
       >
         <Grid>
           <ProblemIcon />
-          <h1 sx={{color: `primary2`}}>{framework}</h1>
+          <h1 sx={{color: `naturalDark`}}>{framework}</h1>
         </Grid>
         <h4 sx={{ color: `text` }}>{strapiFrameworks.teaser}</h4>
         <h4 sx={{ color: `text`, fontWeight: `soft`, mt: 3 }}>
