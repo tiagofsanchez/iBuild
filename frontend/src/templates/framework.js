@@ -9,6 +9,7 @@ import HeroFooter from "../components/ui/heroFooter";
 import About from "../components/aboutFooter";
 import FrameworkCard from "../components/ui/frameworkCard";
 import ProblemIcon from "../svgs/problemValidationBig.svg";
+import SocialSharing from "../components/socialSharing";
 import { LightNewsletterForm } from "../components/newsletterForm";
 
 const FrameworkHeader = styled.div`
@@ -25,7 +26,7 @@ const Grid = styled.div`
   grid-template-columns: auto 1fr;
   grid-gap: 20px;
   align-items: center;
-  @media (max-width: 650px) {
+  @media (max-width: 690px) {
     grid-template-columns: auto;
     justify-items: center;
   }
@@ -40,6 +41,20 @@ const SignUpContainer = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 40px;
+  @media (max-width: 690px) {
+    grid-template-columns: auto;
+  }
+`;
+
+const OtherFrameworksContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  justify-items: center;
+  @media (max-width: 880px) {
+    grid-template-columns: auto;
+    grid-gap: 40px;
+  }
 `;
 
 const Framework = ({ pageContext, data }) => {
@@ -57,7 +72,7 @@ const Framework = ({ pageContext, data }) => {
       >
         <Grid>
           <ProblemIcon />
-          <h1>{framework}</h1>
+          <h1 sx={{color: `primary2`}}>{framework}</h1>
         </Grid>
         <h4 sx={{ color: `text` }}>{strapiFrameworks.teaser}</h4>
         <h4 sx={{ color: `text`, fontWeight: `soft`, mt: 3 }}>
@@ -71,8 +86,18 @@ const Framework = ({ pageContext, data }) => {
         <h3>Framework explanation</h3>
         <ReactMarkdown source={strapiFrameworks.theFramework} />
       </section>
-      <section sx={{ variant: `layout.frameworkName` }}>
-        <FrameworkCard />
+      <section sx={{ variant: `layout.frameworkMain` , pt: `0px`}}>
+        <SocialSharing />
+      </section>
+      <section sx={{ variant: `layout.frameworkOthers`, mb: 6 }}>
+        <h1 sx={{ textAlign: `center`, my: 4, color: `text` }}>
+          Other useful tools
+        </h1>
+        <OtherFrameworksContainer>
+          <FrameworkCard />
+          <FrameworkCard />
+          <FrameworkCard />
+        </OtherFrameworksContainer>
       </section>
       <SignUpContainer sx={{ variant: `layout.frameworkFooter` }}>
         <LightNewsletterForm />

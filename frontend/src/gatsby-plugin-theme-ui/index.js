@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ["690px", "1100px","1440px"],
+  breakpoints: ["690px", "1100px", "1440px"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     text: "black",
@@ -91,12 +91,11 @@ export default {
         fontWeight: "body",
         color: "text",
       },
-      li: { 
+      li: {
         fontSize: [17, 20, 20],
         fontFamily: "body",
         fontWeight: "body",
         color: "text",
-
       },
     },
   },
@@ -108,14 +107,18 @@ export default {
     frameworkName: {
       width: ["90%", "80%", "900px"],
       margin: `auto`,
-      color: "text"
+      color: "text",
     },
     frameworkMain: {
-      width: ["90%", "80%", "800px"],
+      width: ["100%", "80%", "800px"],
       margin: "auto",
       padding: 4,
     },
-    frameworkFooter: { 
+    frameworkOthers: {
+      width: ["90%", "90%", "1100px"],
+      margin: "auto",
+    },
+    frameworkFooter: {
       width: ["90%", "80%", "900px"],
     },
     main: {
@@ -131,13 +134,20 @@ export default {
     },
   },
   buttons: {
-    primary: { 
+    primary: {
       cursor: "pointer",
     },
     icon: {
       width: "auto",
       height: "auto",
       cursor: "pointer",
+    },
+    share: {
+      width: `40px`,
+      height: `40px`,
+      "&:hover": {
+        bg: `primary2`,
+      },
     },
   },
   cards: {
@@ -163,7 +173,7 @@ export default {
       p: 3,
     },
     formCard: {
-      width: ["100%","100%","100%", "1024px"], 
+      width: ["100%", "100%", "100%", "1024px"],
       margin: "auto",
       borderRadius: 15,
       bg: "background",
@@ -180,4 +190,4 @@ export default {
       },
     },
   },
-}
+};
