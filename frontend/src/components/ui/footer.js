@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 
 const FooterContainer = styled.div`
   width: 100%;
-  height: 70px;
+  height: 50px;
   display: grid;
   align-items: center;
 `;

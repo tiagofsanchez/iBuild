@@ -1,23 +1,23 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import styled from "@emotion/styled"
-import { Link } from "gatsby"
+import { jsx } from "theme-ui";
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
 
-import MenuButton from "./menuButton"
-import IkLogo from "../svgs/iKlogo.svg"
+import MenuButton from "./menuButton";
+import IkLogo from "../svgs/iKlogo.svg";
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`
+`;
 
 const IconContainer = styled.div`
   width: auto;
   height: auto;
   z-index: 100;
   position: relative;
-`
+`;
 
 const MenuItems = styled.ul`
   list-style: none;
@@ -30,23 +30,25 @@ const MenuItems = styled.ul`
     grid-template-columns: auto;
     grid-gap: 30px;
   }
-`
+`;
 
 const NavDesktop = styled.nav`
   @media (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 const NavMobile = styled.nav`
   z-index: 1000;
   margin-top: 50px;
   position: fixed;
-`
+  left: 50%;
+  transform: translate(-50%, 0);
+`;
 
 const active = {
   background: "linear-gradient(209.68deg, #40C9FF 20.41%, #E81CFF 94.89%)",
-}
+};
 
 const menuNavItems = (
   <MenuItems sx={{ variant: `text.menu` }}>
@@ -81,7 +83,7 @@ const menuNavItems = (
       </Link>
     </li>
   </MenuItems>
-)
+);
 
 const Menu = ({ backdropHandler, isOpen }) => {
   return (
@@ -97,7 +99,7 @@ const Menu = ({ backdropHandler, isOpen }) => {
       </Container>
       {isOpen && <NavMobile>{menuNavItems}</NavMobile>}
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
