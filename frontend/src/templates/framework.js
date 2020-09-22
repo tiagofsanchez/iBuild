@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import ReactMarkdown from "react-markdown";
 
-import Layout from "../components/layout";
+import{ Layout }from "../components/layout";
 import HeroFooter from "../components/ui/heroFooter";
 import About from "../components/aboutFooter";
 import FrameworkCard from "../components/ui/frameworkCard";

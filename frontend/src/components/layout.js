@@ -19,7 +19,7 @@ const HeroContainer = styled.div`
   grid-template-rows: repeat (2, auto);
 `
 
-const Layout = ({ children , withHero }) => {
+export const Layout = ({ children , withHero }) => {
   const [isOpen, setIsOpen] = useState(false)
   const backdropHandler = () => setIsOpen(!isOpen)
 
@@ -40,4 +40,4 @@ const Layout = ({ children , withHero }) => {
   )
 }
 
-export default Layout
+

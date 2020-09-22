@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui"
-import Layout from "../components/layout"
+import { jsx, Box } from "theme-ui";
 
-import Menu from "../components/menu"
-import FrameworkCard from "../components/ui/frameworkCard"
-import {NewsletterForm }from "../components/newsletterForm";
+import { Layout } from "../components/layout";
+import Menu from "../components/menu";
+import FrameworkCard from "../components/ui/frameworkCard";
+import { NewsletterForm } from "../components/newsletterForm";
 
 const About = () => (
   <Layout withHero={true}>
@@ -32,9 +32,9 @@ const About = () => (
       <hr />
       <h1>Newsletter form</h1>
       <NewsletterForm />
-      <p sx={{variant: `text.caption`}}>Responsive for desktop and mobile</p>
+      <p sx={{ variant: `text.caption` }}>Responsive for desktop and mobile</p>
     </section>
   </Layout>
-)
+);
 
-export default About
+export default About;
