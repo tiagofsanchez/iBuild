@@ -2,7 +2,7 @@
 import { jsx, Box } from "theme-ui";
 import { graphql, Link } from "gatsby";
 
-import { Layout } from "../components/layout";
+import { LandingPageLayout } from "../components/layout";
 import Menu from "../components/menu";
 import FrameworkCard from "../components/ui/frameworkCard";
 import { NewsletterForm } from "../components/newsletterForm";
@@ -14,7 +14,7 @@ const Index = ({ data }) => {
   const frameworkPath = site.siteMetadata.frameworkPath;
 
   return (
-    <Layout withHero={true}>
+    <LandingPageLayout >
       <section sx={{ variant: `layout.main` }}>
         <h1>Should be the Home Page</h1>
         <h1>All components will be here till I set up story book</h1>
@@ -65,7 +65,7 @@ const Index = ({ data }) => {
           );
         })}
       </section>
-    </Layout>
+    </LandingPageLayout>
   );
 };
 

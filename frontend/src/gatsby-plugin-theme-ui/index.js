@@ -104,6 +104,16 @@ export default {
       color: "text",
       margin: [2, 2, 4],
     },
+    main: {
+      width: ["90%", "80%", "90%"],
+      margin: "auto",
+      padding: 4,
+    },
+    footer: {
+      color: "text2",
+      margin: `auto`,
+      width: ["90%", "80%", "90%"],
+    },
     frameworkName: {
       width: ["90%", "80%", "900px"],
       margin: `auto`,
@@ -120,17 +130,6 @@ export default {
     },
     frameworkFooter: {
       width: ["90%", "80%", "900px"],
-    },
-    main: {
-      width: ["90%", "80%", "90%"],
-      margin: "auto",
-      padding: 4,
-    },
-    footer: {
-      color: "text",
-      margin: 4,
-      width: ["80%", "80%", `100%`],
-      padding: `0`,
     },
   },
   buttons: {
