@@ -20,8 +20,8 @@ I still have plenty of things todo and will try to build them on the next couple
 - [ ] Search page
 - [ ] About page
 - [ ] Search implementation
-- [ ] Share components
-- [ ] Implement different layouts 
-- [ ] Footer
+- [x] Share components
+- [x] Implement different layouts 
+- [x] Footer
 - [x] CMS integration (strapi) 
 
