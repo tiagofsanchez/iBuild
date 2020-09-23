@@ -6,7 +6,6 @@ import { useState } from "react";
 
 import LinkIcon from "../svgs/linkIcon.svg";
 import LinkedInIcon from "../svgs/linkedInIcon.svg";
-import TwitterIcon from "../svgs/twitterIcon.svg";
 import FbIcon from "../svgs/fbIcon.svg";
 
 const SocialContainer = styled.div`
@@ -17,10 +16,9 @@ const SocialContainer = styled.div`
   align-items: center;
 `;
 
-const url = window.location.href;
-
 const SocialSharing = () => {
   const [isCopied, setIsCopied] = useState(false);
+  const url = window.location.href;
 
   const handleCopyLink = () => {
     copy(url);
@@ -48,12 +46,7 @@ const SocialSharing = () => {
           <LinkedInIcon />
         </a>
       </IconButton>
-      {/* <IconButton
-        sx={{ bg: `primary`, variant: `buttons.share` }}
-        alt="Share on twitter"
-      >
-        <TwitterIcon />
-      </IconButton> */}
+
       <IconButton
         sx={{ bg: `primary`, variant: `buttons.share` }}
         alt="Copy link "
