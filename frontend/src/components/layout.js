@@ -42,6 +42,7 @@ export const Layout = ({ children, withHero }) => {
   );
 };
 
+
 export const LandingPageLayout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const backdropHandler = () => setIsOpen(!isOpen);

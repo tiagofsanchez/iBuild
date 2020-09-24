@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
+import Img from "gatsby-image";
 
-import PcBig from "../../svgs/pcBig.svg";
+import useImages from "../../hooks/useImages";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 380px;
   grid-gap: 20px;
+  align-items: end;
   @media (max-width: 1050px) {
     grid-template-columns: auto;
   }
@@ -18,6 +20,8 @@ const TextContainer = styled.div`
 `;
 
 const Cta = () => {
+  const { imgHero } = useImages();
+
   return (
     <Container>
       <TextContainer>
@@ -34,8 +38,9 @@ const Cta = () => {
           right taxonomy. Drive change in your organization.
         </p>
       </TextContainer>
-
-      <PcBig />
+      <div sx={{ width: `auto` }}>
+        <Img fluid={imgHero} />
+      </div>
     </Container>
   );
 };

@@ -1,4 +1,6 @@
-require("dotenv").config()
+require("dotenv").config();
+const path = require(`path`);
+
 module.exports = {
   siteMetadata: {
     title: "Build Stuff",
@@ -11,6 +13,15 @@ module.exports = {
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-emotion",
     "gatsby-transformer-remark",
+    "gatsby-transformer-sharp", 
+    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
