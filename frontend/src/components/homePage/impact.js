@@ -15,8 +15,8 @@ const Container = styled.div`
 const Impact = () => {
   return (
     <Container>
-      <h2 sx={{my:`0px`}}>Learn all you need to make and impact</h2 >
-      <p>
+      <h2 sx={{my:`0px`, color:`text`}}>Learn all you need to make and impact</h2 >
+      <p sx={{color: `textOpacity`}}>
         The Innovation space if full of difficult words, terminologies and fancy
         frameworks. Here you will find everything that you need to know.
       </p>

@@ -3,6 +3,7 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   colors: {
     text: "black",
+    textOpacity: "rgba(0, 0, 0, 0.5)",
     text2: "white",
     background: "#F2F6FF",
     backgroundHeader: "#E7E6FF",

@@ -9,7 +9,6 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 380px;
   grid-gap: 20px;
-  align-items: end;
   @media (max-width: 1050px) {
     grid-template-columns: auto;
   }
@@ -17,6 +16,9 @@ const Container = styled.div`
 
 const TextContainer = styled.div`
   display: grip;
+  @media (max-width: 1050px) { 
+    text-align: center;
+  }
 `;
 
 const Cta = () => {
