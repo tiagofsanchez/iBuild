@@ -105,7 +105,7 @@ export default {
       margin: [2, 2, 4],
     },
     main: {
-      width: ["90%", "80%", "90%"],
+      width: ["90%", "80%", "1000px"],
       margin: "auto",
       padding: 4,
     },

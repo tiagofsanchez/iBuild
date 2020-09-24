@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui";
+import { jsx } from "theme-ui";
 import { graphql, Link } from "gatsby";
 
 import { LandingPageLayout } from "../components/layout";
-import Menu from "../components/menu";
+import Cta from '../components/homePage/cta';
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import { NewsletterForm } from "../components/newsletterForm";
 
@@ -16,7 +16,7 @@ const Index = ({ data }) => {
   return (
     <LandingPageLayout >
       <section sx={{ variant: `layout.main` }}>
-      <FrameworkCardList />
+      <Cta />
       </section>
       <section sx={{variant: `layout.main`}}>
       <FrameworkCardList />      
@@ -62,6 +62,9 @@ const Index = ({ data }) => {
             </div>
           );
         })}
+      </section>
+      <section sx={{variant: `layout.main`}}> 
+        <NewsletterForm />
       </section>
     </LandingPageLayout>
   );
