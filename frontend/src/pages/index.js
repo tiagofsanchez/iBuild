@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 import useImages from "../hooks/useImages";
 import { LandingPageLayout } from "../components/layout";
 import Cta from "../components/homePage/cta";
+import Impact from '../components/homePage/impact';
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import { NewsletterForm } from "../components/newsletterForm";
 
@@ -29,6 +30,9 @@ const Index = ({ data }) => {
       <Container>
         <section sx={{ variant: `layout.main` }}>
           <Cta />
+        </section>
+        <section sx={{ variant: `layout.main` }}>
+          <Impact />
         </section>
         <section sx={{ variant: `layout.main` }}>
           <FrameworkCardList />
