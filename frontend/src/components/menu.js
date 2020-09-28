@@ -64,22 +64,22 @@ const menuNavItems = (
     </li>
     <li>
       <Link
-        to="/about"
-        activeClassName="active"
-        sx={{ variant: `links.primary`, color: `text2` }}
-        activeStyle={active}
-      >
-        About
-      </Link>
-    </li>
-    <li>
-      <Link
         to="/search"
         activeClassName="active"
         sx={{ variant: `links.primary`, color: `text2` }}
         activeStyle={active}
       >
         Search
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/about"
+        activeClassName="active"
+        sx={{ variant: `links.primary`, color: `text2` }}
+        activeStyle={active}
+      >
+        About
       </Link>
     </li>
   </MenuItems>

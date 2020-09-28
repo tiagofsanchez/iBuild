@@ -115,6 +115,18 @@ export default {
       margin: `auto`,
       width: ["90%", "80%", "90%"],
     },
+    searchBar: { 
+      width: ["90%", "80%", "900px"],
+      margin: `auto`,
+      color: "text",
+    },
+    searchMain : { 
+      width: ["90%", "90%", "1100px"],
+      margin: "auto",
+    },
+    searchFooter : {
+      width: ["90%", "80%", "900px"],
+    },
     frameworkName: {
       width: ["90%", "80%", "900px"],
       margin: `auto`,

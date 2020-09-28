@@ -1,39 +1,37 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui";
+import { jsx, Input, Button, Radio, Label } from "theme-ui";
+import { graphql } from 'gatsby'
+import styled from "@emotion/styled";
 
 import { Layout } from "../components/layout";
-import Menu from "../components/menu";
-import FrameworkCard from "../components/ui/frameworkCard";
-import { NewsletterForm } from "../components/newsletterForm";
+
+const SearchBarContainer = styled.section`
+  padding: 50px;
+  box-shadow: 0px 5px 5px rgba(57, 19, 184, 0.07);
+  @media (max-width: 650px) {
+    padding:10px 10px;
+  }
+`;
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+`;
 
 const Search = () => (
   <Layout withHero={true}>
-    <section sx={{ variant: `layout.main` }}>
-      <h1>Should be the Search Page</h1>
-      <h1>All components will be here till I set up story book</h1>
-      <hr />
-      <h1>Menu</h1>
-      <Box sx={{ bg: `naturalDark` }}>
-        <Menu />
-      </Box>
-      <hr />
-      <h1>Typography H1</h1>
-      <h2>This is H2</h2>
-      <h3>This is H3</h3>
-      <h4>This is H4</h4>
-      <p>This is the normal paragraph</p>
-      <p sx={{ variant: `text.tagline` }}>This is a tagline</p>
-      <p sx={{ variant: `text.caption` }}>This is a caption</p>
-      <hr />
-      <h1>Cards</h1>
-      <p>Primary</p>
-      <FrameworkCard />
-      <p sx={{ variant: `text.caption` }}>Responsive for desktop and mobile</p>
-      <hr />
-      <h1>Newsletter form</h1>
-      <NewsletterForm />
-      <p sx={{ variant: `text.caption` }}>Responsive for desktop and mobile</p>
-    </section>
+    <SearchBarContainer
+      sx={{
+        variant: `layout.searchBar`,
+        bg: `backgroundHeader`,
+        borderRadius: 15,
+      }}
+    >
+      <GridContainer>
+        <Input />
+        <Button>Search</Button>
+      </GridContainer>
+    </SearchBarContainer>
   </Layout>
 );
 

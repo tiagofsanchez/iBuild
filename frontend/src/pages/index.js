@@ -7,18 +7,28 @@ import useImages from "../hooks/useImages";
 import { LandingPageLayout } from "../components/layout";
 import Cta from "../components/homePage/cta";
 import Impact from '../components/homePage/impact';
+import Vector from '../svgs/vector.svg';
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import { NewsletterForm } from "../components/newsletterForm";
 
 const _ = require("lodash");
 
-
-
 const Container = styled.div`
   display: grid;
-  grid-gap: 100px;
+  grid-gap: 200px;
   margin-bottom: 100px;
 `;
+
+const Section = styled.section`
+  position: relative; 
+`
+const VectorContainer = styled.div`
+  position: absolute; 
+  right: 0;
+  top:0;
+  z-index:-10;
+`
+
 
 const Index = ({ data }) => {
   const { imgHero } = useImages();
@@ -36,11 +46,14 @@ const Index = ({ data }) => {
         <section sx={{ variant: `layout.main` }}>
           <Impact />
         </section>
-        <section sx={{ variant: `layout.main` }}>
+        <Section sx={{ variant: `layout.main` }}>
           <h2 sx={{color:`text`, mt:`0px`}}>Frameworks</h2>
           <p sx={{variant: `text.tagline`}}>Our most popular</p>
           <FrameworkCardList />
-        </section>
+          <VectorContainer>
+          <Vector />
+          </VectorContainer>
+        </Section>
         <section sx={{ variant: `layout.main` }}>
           <NewsletterForm />
         </section>
