@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 
 import { frameworksToArray } from "../utils/helpers";
@@ -11,8 +11,6 @@ import Impact from "../components/homePage/impact";
 import Vector from "../svgs/vector.svg";
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import { NewsletterForm } from "../components/newsletterForm";
-
-const _ = require("lodash");
 
 const Container = styled.div`
   display: grid;
@@ -31,8 +29,7 @@ const VectorContainer = styled.div`
 `;
 
 const Index = ({ data }) => {
-  const { allStrapiFrameworks, site } = data;
-  const frameworkPath = site.siteMetadata.frameworkPath;
+  const { allStrapiFrameworks } = data;
   const allFrameworks = frameworksToArray(allStrapiFrameworks.edges);
 
   return (
@@ -72,11 +69,6 @@ export const query = graphql`
           teaser
           caption
         }
-      }
-    }
-    site {
-      siteMetadata {
-        frameworkPath
       }
     }
   }

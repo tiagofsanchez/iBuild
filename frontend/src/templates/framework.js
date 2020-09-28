@@ -46,8 +46,6 @@ const SignUpContainer = styled.div`
   }
 `;
 
-
-
 const Framework = ({ pageContext, data }) => {
   const framework = pageContext.name;
   const { strapiFrameworks } = data;
@@ -84,7 +82,7 @@ const Framework = ({ pageContext, data }) => {
         <h1 sx={{ textAlign: `center`, my: 4, color: `text` }}>
           Other useful tools
         </h1>
-        <FrameworkCardList /> 
+        {/* <FrameworkCardList /> */}
       </section>
       <SignUpContainer sx={{ variant: `layout.frameworkFooter` }}>
         <LightNewsletterForm />
@@ -104,6 +102,18 @@ export const framework = graphql`
       description
       whoToUse
       theFramework
+    }
+    allStrapiFrameworks {
+      edges {
+        node {
+          type {
+            type
+          }
+          name
+          teaser
+          caption
+        }
+      }
     }
   }
 `;
