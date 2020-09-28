@@ -14,12 +14,12 @@ const Container = styled.div`
   }
 `;
 
-const FrameworkCardList = () => {
+const FrameworkCardList = ({ allFrameworks }) => {
   return (
     <Container>
-      <FrameworkCard />
-      <FrameworkCard />
-      <FrameworkCard />
+      {allFrameworks.map((framework) => (
+        <FrameworkCard {...framework} key={framework.name}/>
+      ))}
     </Container>
   );
 };

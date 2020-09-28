@@ -3,11 +3,12 @@ import { jsx } from "theme-ui";
 import { graphql, Link } from "gatsby";
 import styled from "@emotion/styled";
 
-import useImages from "../hooks/useImages";
+import { frameworksToArray } from "../utils/helpers";
+
 import { LandingPageLayout } from "../components/layout";
 import Cta from "../components/homePage/cta";
-import Impact from '../components/homePage/impact';
-import Vector from '../svgs/vector.svg';
+import Impact from "../components/homePage/impact";
+import Vector from "../svgs/vector.svg";
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import { NewsletterForm } from "../components/newsletterForm";
 
@@ -20,38 +21,35 @@ const Container = styled.div`
 `;
 
 const Section = styled.section`
-  position: relative; 
-`
+  position: relative;
+`;
 const VectorContainer = styled.div`
-  position: absolute; 
+  position: absolute;
   right: 0;
-  top:0;
-  z-index:-10;
-`
-
+  top: 0;
+  z-index: -10;
+`;
 
 const Index = ({ data }) => {
-  const { imgHero } = useImages();
-  const { allStrapiTypeOfFrameworks, site } = data;
+  const { allStrapiFrameworks, site } = data;
   const frameworkPath = site.siteMetadata.frameworkPath;
-
-  console.log(imgHero);
+  const allFrameworks = frameworksToArray(allStrapiFrameworks.edges);
 
   return (
     <LandingPageLayout>
-        <section sx={{ variant: `layout.main`, mb:`200px` }}>
-          <Cta />
-        </section>
-        <Container>
+      <section sx={{ variant: `layout.main`, mb: `200px` }}>
+        <Cta />
+      </section>
+      <Container>
         <section sx={{ variant: `layout.main` }}>
           <Impact />
         </section>
         <Section sx={{ variant: `layout.main` }}>
-          <h2 sx={{color:`text`, mt:`0px`}}>Frameworks</h2>
-          <p sx={{variant: `text.tagline`}}>Our most popular</p>
-          <FrameworkCardList />
+          <h2 sx={{ color: `text`, mt: `0px` }}>Frameworks</h2>
+          <p sx={{ variant: `text.tagline` }}>Our most popular</p>
+          <FrameworkCardList allFrameworks={allFrameworks} />
           <VectorContainer>
-          <Vector />
+            <Vector />
           </VectorContainer>
         </Section>
         <section sx={{ variant: `layout.main` }}>
@@ -64,14 +62,15 @@ const Index = ({ data }) => {
 
 export const query = graphql`
   {
-    allStrapiTypeOfFrameworks {
+    allStrapiFrameworks {
       edges {
         node {
-          type
-          frameworks {
-            name
-            description
+          type {
+            type
           }
+          name
+          teaser
+          caption
         }
       }
     }
