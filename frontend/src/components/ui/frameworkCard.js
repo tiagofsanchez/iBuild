@@ -5,7 +5,6 @@ import { Link } from "gatsby";
 import ProblemValidationBig from "../../svgs/problemValidationBig.svg";
 
 const FrameworkCard = ({ name, teaser, caption, url }) => {
-  console.log(url);
   return (
     <Card>
       <Link to={url} sx={{textDecoration: `none`}}>

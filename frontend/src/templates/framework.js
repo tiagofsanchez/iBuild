@@ -4,6 +4,8 @@ import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import ReactMarkdown from "react-markdown";
 
+import { frameworksToArray } from '../utils/helpers';
+
 import { Layout } from "../components/layout";
 import HeroFooter from "../components/ui/heroFooter";
 import About from "../components/aboutFooter";
@@ -48,7 +50,9 @@ const SignUpContainer = styled.div`
 
 const Framework = ({ pageContext, data }) => {
   const framework = pageContext.name;
-  const { strapiFrameworks } = data;
+  const { strapiFrameworks ,allStrapiFrameworks } = data;
+
+  const allFrameworks = frameworksToArray(allStrapiFrameworks.edges)
 
   return (
     <Layout withHero={true}>
@@ -82,7 +86,7 @@ const Framework = ({ pageContext, data }) => {
         <h1 sx={{ textAlign: `center`, my: 4, color: `text` }}>
           Other useful tools
         </h1>
-        {/* <FrameworkCardList /> */}
+        <FrameworkCardList allFrameworks={allFrameworks}/>
       </section>
       <SignUpContainer sx={{ variant: `layout.frameworkFooter` }}>
         <LightNewsletterForm />
