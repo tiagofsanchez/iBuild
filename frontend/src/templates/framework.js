@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import ReactMarkdown from "react-markdown";
 
-import { frameworksToArray } from '../utils/helpers';
+import { frameworksToArray, LowerCaseString } from "../utils/helpers";
 
 import { Layout } from "../components/layout";
 import HeroFooter from "../components/ui/heroFooter";
@@ -50,9 +50,26 @@ const SignUpContainer = styled.div`
 
 const Framework = ({ pageContext, data }) => {
   const framework = pageContext.name;
-  const { strapiFrameworks ,allStrapiFrameworks } = data;
+  const { strapiFrameworks, discovering, building, scaling } = data;
 
-  const allFrameworks = frameworksToArray(allStrapiFrameworks.edges)
+  const frameworkType = LowerCaseString(strapiFrameworks.type.type);
+
+  let allFrameworks = [];
+  if (frameworkType === "discovering") {
+    allFrameworks = frameworksToArray(
+      discovering.edges.filter(
+        (fram) => fram.node.name !== strapiFrameworks.name
+      )
+    );
+  } else if (frameworkType === `building`) {
+    allFrameworks = frameworksToArray(
+      building.edges.filter((fram) => fram.node.name !== strapiFrameworks.name)
+    );
+  } else {
+    allFrameworks = frameworksToArray(
+      scaling.edges.filter((fram) => fram.node.name !== strapiFrameworks.name)
+    );
+  }
 
   return (
     <Layout withHero={true}>
@@ -86,7 +103,7 @@ const Framework = ({ pageContext, data }) => {
         <h1 sx={{ textAlign: `center`, my: 4, color: `text` }}>
           Other useful tools
         </h1>
-        <FrameworkCardList allFrameworks={allFrameworks}/>
+        <FrameworkCardList allFrameworks={allFrameworks} />
       </section>
       <SignUpContainer sx={{ variant: `layout.frameworkFooter` }}>
         <LightNewsletterForm />
@@ -106,16 +123,52 @@ export const framework = graphql`
       description
       whoToUse
       theFramework
+      type {
+        type
+      }
     }
-    allStrapiFrameworks {
+    discovering: allStrapiFrameworks(
+      filter: { type: { type: { eq: "Discovering" } } }
+      limit: 3
+    ) {
       edges {
         node {
-          type {
-            type
-          }
           name
           teaser
           caption
+          type {
+            type
+          }
+        }
+      }
+    }
+    building: allStrapiFrameworks(
+      filter: { type: { type: { eq: "Building" } } }
+      limit: 3
+    ) {
+      edges {
+        node {
+          name
+          teaser
+          caption
+          type {
+            type
+          }
+        }
+      }
+    }
+    scaling: allStrapiFrameworks(
+      filter: { type: { type: { eq: "Scaling" } } }
+      limit: 3
+    ) {
+      edges {
+        node {
+          name
+          teaser
+          caption
+          type {
+            type
+          }
         }
       }
     }
