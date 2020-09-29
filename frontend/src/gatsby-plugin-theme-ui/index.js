@@ -110,6 +110,10 @@ export default {
       margin: "auto",
       padding: 4,
     },
+    mainFrameworks: { 
+      width: ["90%", "90%", "1100px"],
+      margin: "auto",
+    },
     footer: {
       color: "text2",
       margin: `auto`,
@@ -164,7 +168,7 @@ export default {
   },
   cards: {
     primary: {
-      width: ["261px", "261px", "352px"],
+      width: [ "250px","350px","350px"],
       borderRadius: 15,
       background: `white`,
       cursor: "pointer",

@@ -18,7 +18,7 @@ const Container = styled.div`
   margin-bottom: 100px;
 `;
 
-const Section = styled.section`
+const Section = styled.div`
   position: relative;
 `;
 const VectorContainer = styled.div`
@@ -41,14 +41,18 @@ const Index = ({ data }) => {
         <section sx={{ variant: `layout.main` }}>
           <Impact />
         </section>
-        <Section sx={{ variant: `layout.main` }}>
-          <h2 sx={{ color: `text`, mt: `0px` }}>Frameworks</h2>
-          <p sx={{ variant: `text.tagline` }}>Our most popular</p>
-          <FrameworkCardList allFrameworks={allFrameworks} />
+        <section>
+          <Section sx={{ variant: `layout.main` }}>
+            <h2 sx={{ color: `text`, mt: `0px` }}>Frameworks</h2>
+            <p sx={{ variant: `text.tagline` }}>Our most popular</p>
+          </Section>
+          <div sx={{ variant: `layout.mainFrameworks` }}>
+            <FrameworkCardList allFrameworks={allFrameworks} />
+          </div>
           <VectorContainer>
             <Vector />
           </VectorContainer>
-        </Section>
+        </section>
         <section sx={{ variant: `layout.main` }}>
           <NewsletterForm />
         </section>
