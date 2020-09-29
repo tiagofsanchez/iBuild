@@ -7,12 +7,12 @@ import ReactMarkdown from "react-markdown";
 import { frameworksToArray, LowerCaseString } from "../utils/helpers";
 
 import { Layout } from "../components/layout";
-import HeroFooter from "../components/ui/heroFooter";
-import About from "../components/aboutFooter";
+
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import ProblemIcon from "../svgs/problemValidationBig.svg";
 import SocialSharing from "../components/socialSharing";
-import { LightNewsletterForm } from "../components/newsletterForm";
+import FooterSubscription from "../components/shared/footerSubscription"
+
 
 const FrameworkHeader = styled.div`
   padding: 50px;
@@ -34,19 +34,6 @@ const Grid = styled.div`
   }
 `;
 
-const SignUpContainer = styled.div`
-  position: absolute;
-  bottom: 120px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 50;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 40px;
-  @media (max-width: 690px) {
-    grid-template-columns: auto;
-  }
-`;
 
 const Framework = ({ pageContext, data }) => {
   const framework = pageContext.name;
@@ -105,11 +92,7 @@ const Framework = ({ pageContext, data }) => {
         </h1>
         <FrameworkCardList allFrameworks={allFrameworks} />
       </section>
-      <SignUpContainer sx={{ variant: `layout.frameworkFooter` }}>
-        <LightNewsletterForm />
-        <About />
-      </SignUpContainer>
-      <HeroFooter />
+      <FooterSubscription />
     </Layout>
   );
 };

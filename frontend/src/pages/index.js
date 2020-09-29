@@ -10,6 +10,7 @@ import Cta from "../components/homePage/cta";
 import Impact from "../components/homePage/impact";
 import Vector from "../svgs/vector.svg";
 import FrameworkCardList from "../components/shared/frameworkCardList";
+import Vector2 from "../svgs/vector2.svg";
 import { NewsletterForm } from "../components/newsletterForm";
 
 const Container = styled.div`
@@ -18,15 +19,19 @@ const Container = styled.div`
   margin-bottom: 100px;
 `;
 
-const Section = styled.div`
-  position: relative;
-`;
 const VectorContainer = styled.div`
   position: absolute;
   right: 0;
-  top: 0;
+  top: 40%;
   z-index: -10;
 `;
+
+const Vector2Container = styled.div`
+position: absolute;
+left:0;
+bottom: -10px;
+z-index: -10;
+`
 
 const Index = ({ data }) => {
   const { allStrapiFrameworks } = data;
@@ -42,10 +47,10 @@ const Index = ({ data }) => {
           <Impact />
         </section>
         <section>
-          <Section sx={{ variant: `layout.main` }}>
+          <div sx={{ variant: `layout.main` }}>
             <h2 sx={{ color: `text`, mt: `0px` }}>Frameworks</h2>
             <p sx={{ variant: `text.tagline` }}>Our most popular</p>
-          </Section>
+          </div>
           <div sx={{ variant: `layout.mainFrameworks` }}>
             <FrameworkCardList allFrameworks={allFrameworks} />
           </div>
@@ -56,6 +61,9 @@ const Index = ({ data }) => {
         <section sx={{ variant: `layout.main` }}>
           <NewsletterForm />
         </section>
+        <Vector2Container>
+          <Vector2 />
+        </Vector2Container>
       </Container>
     </LandingPageLayout>
   );

@@ -64,12 +64,12 @@ const menuNavItems = (
     </li>
     <li>
       <Link
-        to="/search"
+        to="/frameworks"
         activeClassName="active"
         sx={{ variant: `links.primary`, color: `text2` }}
         activeStyle={active}
       >
-        Search
+        Frameworks
       </Link>
     </li>
     <li>
