@@ -3,11 +3,11 @@ import { jsx } from "theme-ui";
 import { useState } from "react";
 import styled from "@emotion/styled";
 
-import HeroHeader from "../components/ui/heroHeader";
-import Hero from "../components/ui/hero";
+import HeroHeader from "../ui/heroHeader";
+import Hero from "../ui/hero";
 import Menu from "./menu";
-import Backdrop from "../components/ui/backdrop";
-import Footer from "../components/ui/footer";
+import Backdrop from "../ui/backdrop";
+import Footer from "./footer";
 
 const LayoutContainer = styled.div`
   position: relative;
@@ -41,7 +41,6 @@ export const Layout = ({ children, withHero }) => {
     </div>
   );
 };
-
 
 export const LandingPageLayout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);

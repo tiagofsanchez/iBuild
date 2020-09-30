@@ -4,9 +4,9 @@ import styled from "@emotion/styled";
 import copy from "copy-to-clipboard";
 import { useState } from "react";
 
-import LinkIcon from "../svgs/linkIcon.svg";
-import LinkedInIcon from "../svgs/linkedInIcon.svg";
-import FbIcon from "../svgs/fbIcon.svg";
+import LinkIcon from "../../svgs/linkIcon.svg";
+import LinkedInIcon from "../../svgs/linkedInIcon.svg";
+import FbIcon from "../../svgs/fbIcon.svg";
 
 const SocialContainer = styled.div`
   display: grid;

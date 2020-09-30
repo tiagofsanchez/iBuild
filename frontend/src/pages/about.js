@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx, Box } from "theme-ui";
 
-import { Layout } from "../components/layout";
-import Menu from "../components/menu";
+import { Layout } from "../components/shared/layout";
+import Menu from "../components/shared/menu";
 import FrameworkCard from "../components/ui/frameworkCard";
-import { NewsletterForm } from "../components/newsletterForm";
+import { NewsletterForm } from "../components/shared/newsletterForm";
 
 const About = () => (
   <Layout withHero={true}>

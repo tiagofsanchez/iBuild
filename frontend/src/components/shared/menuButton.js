@@ -2,8 +2,8 @@
 import { jsx, IconButton } from "theme-ui"
 import styled from "@emotion/styled"
 
-import MenuIcon from "../svgs/menuIcon.svg";
-import CloseIcon from '../svgs/closeIcon.svg'
+import MenuIcon from "../../svgs/menuIcon.svg";
+import CloseIcon from '../../svgs/closeIcon.svg'
 
 
 const MenuButtonContainer = styled.div`

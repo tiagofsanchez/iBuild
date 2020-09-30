@@ -7,9 +7,9 @@ import ReactMarkdown from "react-markdown";
 
 import { frameworksToArray, LowerCaseString } from "../utils/helpers";
 
-import { Layout } from "../components/layout";
+import { Layout } from "../components/shared/layout";
 import FrameworkCardList from "../components/shared/frameworkCardList";
-import SocialSharing from "../components/socialSharing";
+import SocialSharing from "../components/shared/socialSharing";
 import FooterSubscription from "../components/shared/footerSubscription";
 
 const FrameworkHeader = styled.div`

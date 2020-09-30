@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 
 import { frameworksToArray } from '../utils/helpers'
 
-import { Layout } from "../components/layout";
+import { Layout } from "../components/shared/layout";
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import FooterSubscription from '../components/shared/footerSubscription';
 

@@ -3,8 +3,8 @@ import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
 
 import HeroFooter from "../ui/heroFooter";
-import About from "../aboutFooter";
-import { LightNewsletterForm } from "../newsletterForm";
+import About from "./aboutFooter";
+import { LightNewsletterForm } from "./newsletterForm";
 
 const SignUpContainer = styled.div`
   position: absolute;

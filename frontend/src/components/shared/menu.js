@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
 import MenuButton from "./menuButton";
-import IkLogo from "../svgs/iKlogo.svg";
+import IkLogo from "../../svgs/iKlogo.svg";
 
 const Container = styled.div`
   display: flex;

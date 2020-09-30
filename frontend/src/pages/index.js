@@ -5,13 +5,13 @@ import styled from "@emotion/styled";
 
 import { frameworksToArray } from "../utils/helpers";
 
-import { LandingPageLayout } from "../components/layout";
+import { LandingPageLayout } from "../components/shared/layout";
 import Cta from "../components/homePage/cta";
 import Impact from "../components/homePage/impact";
 import Vector from "../svgs/vector.svg";
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import Vector2 from "../svgs/vector2.svg";
-import { NewsletterForm } from "../components/newsletterForm";
+import { NewsletterForm } from "../components/shared/newsletterForm";
 
 const Container = styled.div`
   display: grid;

@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, Box, Input, Button } from "theme-ui";
 import styled from "@emotion/styled";
+import Img from "gatsby-image";
 
-import Pc from "../svgs/pc.svg";
+import useImage from "../../hooks/useImages";
 
 const Container = styled.div`
   display: grid;
@@ -10,9 +11,6 @@ const Container = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: auto;
     grid-template-rows: 200px 1fr;
-  }
-  @media (max-width: 580px) {
-    grid-template-rows: 1fr;
   }
 `;
 
@@ -22,10 +20,6 @@ const IconContainer = styled.div`
   border-radius: 15px 0px 0px 15px;
   @media (max-width: 768px) {
     border-radius: 15px 15px 0px 0px;
-    justify-content: center;
-  }
-  @media (max-width: 580px) {
-    display: none;
   }
 `;
 
@@ -33,7 +27,7 @@ const SignUpContainer = styled.div`
   width: 300px;
   margin: auto;
   padding: 50px 0px;
-  @media (max-width: 580px) {
+  @media (max-width: 880px) {
     width: 90%;
   }
 `;
@@ -53,11 +47,15 @@ const GridContainer = styled.div`
 `;
 
 export const NewsletterForm = () => {
+  const { imgHero } = useImage();
+
   return (
     <Box sx={{ variant: `cards.formCard` }}>
       <Container>
         <IconContainer sx={{ bg: `naturalDark` }}>
-          <Pc />
+          <div sx={{ width: `auto` }}>
+            <Img fluid={imgHero} />
+          </div>
         </IconContainer>
         <SignUpContainer>
           <h1 sx={{ mt: `0px` }}>Sign up</h1>
