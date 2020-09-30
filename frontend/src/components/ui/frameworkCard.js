@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import Img from 'gatsby-image';
 
 const FrameworkCard = ({ name, teaser, caption, url , icon }) => {
-  console.log(icon);
   return (
     <Card>
       <Link to={url} sx={{textDecoration: `none`}}>

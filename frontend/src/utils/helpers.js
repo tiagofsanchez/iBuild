@@ -1,5 +1,4 @@
 export const frameworksToArray = (array) => {
-  console.log(array);
   let allFrameworks = [];
   array.map((framework) => {
     const name = framework.node.name;

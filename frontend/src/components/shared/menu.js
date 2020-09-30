@@ -72,16 +72,6 @@ const menuNavItems = (
         Frameworks
       </Link>
     </li>
-    <li>
-      <Link
-        to="/about"
-        activeClassName="active"
-        sx={{ variant: `links.primary`, color: `text2` }}
-        activeStyle={active}
-      >
-        About
-      </Link>
-    </li>
   </MenuItems>
 );
 

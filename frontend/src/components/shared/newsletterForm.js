@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box, Input, Button } from "theme-ui";
+import { useState } from "react";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
 
@@ -47,7 +48,13 @@ const GridContainer = styled.div`
 `;
 
 export const NewsletterForm = () => {
+  
+  const [value, setValue] = useState({
+    name: "",
+    email: ""
+  });
   const { imgHero } = useImage();
+  console.log(value);
 
   return (
     <Box sx={{ variant: `cards.formCard` }}>
@@ -83,6 +90,11 @@ export const NewsletterForm = () => {
 };
 
 export const LightNewsletterForm = () => {
+  const [value, setValue] = useState({
+    name: "",
+    email: ""
+  });
+  console.log(value);
   return (
     <LightSignUpContainer>
       <h4 sx={{ mt: `0px`, color: `text` }}>Our newsletter</h4>
