@@ -40,6 +40,13 @@ export const search = graphql`
           name
           teaser
           caption
+          icon {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

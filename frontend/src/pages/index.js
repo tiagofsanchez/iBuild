@@ -27,11 +27,11 @@ const VectorContainer = styled.div`
 `;
 
 const Vector2Container = styled.div`
-position: absolute;
-left:0;
-bottom: -10px;
-z-index: -10;
-`
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  z-index: -10;
+`;
 
 const Index = ({ data }) => {
   const { allStrapiFrameworks } = data;
@@ -80,6 +80,13 @@ export const query = graphql`
           name
           teaser
           caption
+          icon {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

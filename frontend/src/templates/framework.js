@@ -52,7 +52,6 @@ const Framework = ({ pageContext, data }) => {
     );
   }
 
-  console.log(strapiFrameworks.icon);
   return (
     <Layout withHero={true}>
       <FrameworkHeader
@@ -126,6 +125,13 @@ export const framework = graphql`
           type {
             type
           }
+          icon {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
@@ -141,6 +147,13 @@ export const framework = graphql`
           type {
             type
           }
+          icon {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
@@ -155,6 +168,13 @@ export const framework = graphql`
           caption
           type {
             type
+          }
+          icon {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }

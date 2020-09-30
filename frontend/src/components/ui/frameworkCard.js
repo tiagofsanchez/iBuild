@@ -1,18 +1,20 @@
 /** @jsx jsx */
-import { jsx, Card, Box } from "theme-ui";
+import { jsx, Card, Box , Grid} from "theme-ui";
 import { Link } from "gatsby";
+import Img from 'gatsby-image';
 
-import ProblemValidationBig from "../../svgs/problemValidationBig.svg";
-
-const FrameworkCard = ({ name, teaser, caption, url }) => {
+const FrameworkCard = ({ name, teaser, caption, url , icon }) => {
+  console.log(icon);
   return (
     <Card>
       <Link to={url} sx={{textDecoration: `none`}}>
         <Box sx={{ variant: `cards.header` }}>
-          <Box sx={{ width: `252px`, textAlign: `center` }}>
-            <ProblemValidationBig />
+          <Grid sx={{ width: `252px`, textAlign: `center` , justifyItems: `center` }}>
+            <div sx={{width:'120px'}}>
+            <Img fluid={icon}/>
+            </div>
             <h4 sx={{ m: `0px`, color: `text` }}>{name}</h4>
-          </Box>
+          </Grid>
         </Box>
         <Box sx={{ variant: `cards.description` }}>
           <p sx={{ m: `0px` }}>{teaser}</p>

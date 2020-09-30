@@ -1,11 +1,13 @@
 export const frameworksToArray = (array) => {
+  console.log(array);
   let allFrameworks = [];
   array.map((framework) => {
     const name = framework.node.name;
     const teaser = framework.node.teaser;
     const caption = framework.node.caption;
     const type = framework.node.type.type;
-    allFrameworks.push({ name, teaser, caption, type });
+    const icon = framework.node.icon.childImageSharp.fluid
+    allFrameworks.push({ name, teaser, caption, type, icon  });
     return allFrameworks;
   });
   return allFrameworks;
