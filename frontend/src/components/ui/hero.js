@@ -24,7 +24,7 @@ const HeroHeader = () => {
 
   return (
     <Container>
-      <HeroSVG size={width} />
+      <HeroSVG width={width} />
     </Container>
   );
 };
