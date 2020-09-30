@@ -2,38 +2,32 @@
 import { jsx } from "theme-ui";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
+import Img from "gatsby-image";
 import ReactMarkdown from "react-markdown";
 
 import { frameworksToArray, LowerCaseString } from "../utils/helpers";
 
 import { Layout } from "../components/layout";
-
 import FrameworkCardList from "../components/shared/frameworkCardList";
-import ProblemIcon from "../svgs/problemValidationBig.svg";
 import SocialSharing from "../components/socialSharing";
-import FooterSubscription from "../components/shared/footerSubscription"
-
+import FooterSubscription from "../components/shared/footerSubscription";
 
 const FrameworkHeader = styled.div`
   padding: 50px;
   backdrop-filter: blur(250px);
   box-shadow: 0px 5px 5px rgba(57, 19, 184, 0.07);
-  @media (max-width: 650px) {
-    text-alignment: center;
-  }
+ margin: auto;
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 
   grid-gap: 20px;
-  align-items: center;
-  @media (max-width: 690px) {
-    grid-template-columns: auto;
-    justify-items: center;
-  }
+  justify-items: center; 
+  text-align: center; 
+  margin: auto;
+ 
 `;
-
 
 const Framework = ({ pageContext, data }) => {
   const framework = pageContext.name;
@@ -58,6 +52,7 @@ const Framework = ({ pageContext, data }) => {
     );
   }
 
+  console.log(strapiFrameworks.icon);
   return (
     <Layout withHero={true}>
       <FrameworkHeader
@@ -68,7 +63,9 @@ const Framework = ({ pageContext, data }) => {
         }}
       >
         <Grid>
-          <ProblemIcon />
+          <div sx={{ width: `120px`, p: 1 }}>
+            <Img fluid={strapiFrameworks.icon.childImageSharp.fluid} />
+          </div>
           <h1 sx={{ color: `naturalDark` }}>{framework}</h1>
         </Grid>
         <h4 sx={{ color: `text` }}>{strapiFrameworks.teaser}</h4>
@@ -108,6 +105,13 @@ export const framework = graphql`
       theFramework
       type {
         type
+      }
+      icon {
+        childImageSharp {
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
     discovering: allStrapiFrameworks(

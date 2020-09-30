@@ -2,7 +2,6 @@ import React from "react";
 import { number } from "prop-types";
 
 const HeroSVG = ({ width }) => {
-  console.log(width);
   return (
     <svg
       width={width}
