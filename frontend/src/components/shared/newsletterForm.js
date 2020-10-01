@@ -2,10 +2,10 @@
 import { jsx, Box, Input, Button } from "theme-ui";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
-import { useState } from "react";
 
 import useImage from "../../hooks/useImages";
 import useFormInput from "../../hooks/useFormInput";
+import { addEmailToConvertKit } from "../../utils/apis";
 
 const Container = styled.div`
   display: grid;
@@ -53,6 +53,11 @@ export const NewsletterForm = () => {
   const name = useFormInput("");
   const email = useFormInput("");
 
+  const onFormSubmithandler = (e) => {
+    e.preventDefault();
+    addEmailToConvertKit(name.value, email.value);
+  };
+
   let disabled = true;
   if (name.value !== "" && email.value !== "") {
     disabled = false;
@@ -72,7 +77,7 @@ export const NewsletterForm = () => {
             Finally a place where you can access everything about
             innovation.Unlock the jargon and get clarity.
           </p>
-          <FormContainer>
+          <FormContainer onSubmit={onFormSubmithandler}>
             <GridContainer>
               <Input placeholder="Your name" type="text" {...name} />
               <Input placeholder="Your email" type="email" {...email} />
