@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 import HeroSVG from "../../svgs/heroSVG";
 
@@ -14,17 +14,20 @@ const Container = styled.div`
 `;
 
 const HeroHeader = () => {
-  const [width, setwidth] = useState(window.innerWidth);
+  //NOTE TO SELF: Window is not available during server side rendering, so defaulted to 5000px
+  // For now I reckon that is ok
 
-  useEffect(() => {
-    const handleResize = () => setwidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  });
+  // const [width, setwidth] = useState(window.innerWidth);
+
+  // useEffect(() => {
+  //   const handleResize = () => setwidth(window.innerWidth);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // });
 
   return (
     <Container>
-      <HeroSVG width={width} />
+      <HeroSVG  />
     </Container>
   );
 };
