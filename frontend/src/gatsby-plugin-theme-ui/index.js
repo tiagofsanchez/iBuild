@@ -170,7 +170,7 @@ export default {
   },
   cards: {
     primary: {
-      width: ["250px", "350px", "350px"],
+      width: ["90%", "350px", "350px"],
       borderRadius: 15,
       background: `white`,
       cursor: "pointer",

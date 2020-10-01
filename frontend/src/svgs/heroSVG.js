@@ -20,9 +20,9 @@ const HeroSVG = ({ width }) => {
           y2="964"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#4E40EA" />
-          <stop offset="0.453125" stop-color="#4900FF" stop-opacity="0.76" />
-          <stop offset="1" stop-color="#4900FF" stop-opacity="0" />
+          <stop stopColor="#4E40EA" />
+          <stop offset="0.453125" stopColor="#4900FF" stopOpacity="0.76" />
+          <stop offset="1" stopColor="#4900FF" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

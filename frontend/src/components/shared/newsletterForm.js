@@ -2,6 +2,7 @@
 import { jsx, Box, Input, Button } from "theme-ui";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
+import { navigate } from "gatsby"
 
 import useImage from "../../hooks/useImages";
 import useFormInput from "../../hooks/useFormInput";
@@ -48,6 +49,7 @@ const GridContainer = styled.div`
   grid-gap: 10px;
 `;
 
+
 export const NewsletterForm = () => {
   const { imgHero } = useImage();
   const name = useFormInput("");
@@ -56,6 +58,7 @@ export const NewsletterForm = () => {
   const onFormSubmithandler = (e) => {
     e.preventDefault();
     addEmailToConvertKit(name.value, email.value);
+    navigate('/success')
   };
 
   let disabled = true;
@@ -79,8 +82,8 @@ export const NewsletterForm = () => {
           </p>
           <FormContainer onSubmit={onFormSubmithandler}>
             <GridContainer>
-              <Input placeholder="Your name" type="text" {...name} />
-              <Input placeholder="Your email" type="email" {...email} />
+              <Input placeholder="😎 Your name" type="text" {...name} />
+              <Input placeholder="📫 Your email" type="email" {...email} />
             </GridContainer>
             <GridContainer>
               <Button
@@ -110,6 +113,12 @@ export const NewsletterForm = () => {
 export const LightNewsletterForm = () => {
   const name = useFormInput("");
   const email = useFormInput("");
+  
+  const onFormSubmithandler = (e) => {
+    e.preventDefault();
+    addEmailToConvertKit(name.value, email.value);
+    navigate('/success')
+  };
 
   let disabled = true;
   if (name.value !== "" && email.value !== "") {
@@ -123,10 +132,10 @@ export const LightNewsletterForm = () => {
         Finally a place where you can access everything about innovation.Unlock
         the jargon and get clarity.
       </p>
-      <FormContainer>
+      <FormContainer onSubmit={onFormSubmithandler}>
         <GridContainer>
-          <Input placeholder="Your name" type="text" {...name} />
-          <Input placeholder="Your email" type="email" {...email} />
+          <Input placeholder="😎 Your name" type="text" {...name} />
+          <Input placeholder="📫 Your email" type="email" {...email} />
         </GridContainer>
         <GridContainer>
           <Button

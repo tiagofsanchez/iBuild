@@ -5,8 +5,6 @@ const convertkit_form = process.env.GATSBY_CONVERTKIT_FORM;
 
 //convertKit
 export const addEmailToConvertKit = (name, email) => {
-  console.log(`${name} and ${email}`)  
-  console.log(convertkit_api_key);
   let axiosConfig = {
     headers: {
       "Content-Type": "application/json",
@@ -17,10 +15,10 @@ export const addEmailToConvertKit = (name, email) => {
     api_key: convertkit_api_key,
     email: email,
     first_name: name,
+    tags: "Frameworks",
   };
   axios
     .post(url, data, axiosConfig)
     .then(() => console.log("Email received in convertkit"))
     .catch((error) => console.log(error));
 };
-
