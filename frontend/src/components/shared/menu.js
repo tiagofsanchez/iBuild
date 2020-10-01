@@ -25,7 +25,7 @@ const MenuItems = styled.ul`
   padding: 0;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
   @media (max-width: 768px) {
     grid-template-columns: auto;
     grid-gap: 30px;

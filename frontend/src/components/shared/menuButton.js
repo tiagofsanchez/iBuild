@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import { jsx, IconButton } from "theme-ui"
-import styled from "@emotion/styled"
+import { jsx, IconButton } from "theme-ui";
+import styled from "@emotion/styled";
 
 import MenuIcon from "../../svgs/menuIcon.svg";
-import CloseIcon from '../../svgs/closeIcon.svg'
-
+import CloseIcon from "../../svgs/closeIcon.svg";
 
 const MenuButtonContainer = styled.div`
   width: auto;
@@ -13,19 +12,16 @@ const MenuButtonContainer = styled.div`
   @media (min-width: 768px) {
     display: none;
   }
-`
+`;
 
-const MenuButton = ({backdropHandler, isOpen}) => {
-
-   
-
+const MenuButton = ({ backdropHandler, isOpen }) => {
   return (
     <MenuButtonContainer>
-      <IconButton onClick={backdropHandler} aria-label='Toggle Menu'>
+      <IconButton onClick={backdropHandler} aria-label="Toggle Menu">
         {isOpen ? <CloseIcon /> : <MenuIcon />}
       </IconButton>
     </MenuButtonContainer>
-  )
-}
+  );
+};
 
-export default MenuButton
+export default MenuButton;

@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import { jsx, Box, Input, Button } from "theme-ui";
-import { useState } from "react";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
+import { useState } from "react";
 
 import useImage from "../../hooks/useImages";
+import useFormInput from "../../hooks/useFormInput";
 
 const Container = styled.div`
   display: grid;
@@ -48,13 +49,14 @@ const GridContainer = styled.div`
 `;
 
 export const NewsletterForm = () => {
-  
-  const [value, setValue] = useState({
-    name: "",
-    email: ""
-  });
   const { imgHero } = useImage();
-  console.log(value);
+  const name = useFormInput("");
+  const email = useFormInput("");
+
+  let disabled = true;
+  if (name.value !== "" && email.value !== "") {
+    disabled = false;
+  }
 
   return (
     <Box sx={{ variant: `cards.formCard` }}>
@@ -72,11 +74,22 @@ export const NewsletterForm = () => {
           </p>
           <FormContainer>
             <GridContainer>
-              <Input placeholder="Your name" />
-              <Input placeholder="Your email" />
+              <Input placeholder="Your name" type="text" {...name} />
+              <Input placeholder="Your email" type="email" {...email} />
             </GridContainer>
             <GridContainer>
-              <Button>Sign up</Button>
+              <Button
+                disabled={disabled}
+                sx={
+                  disabled && {
+                    bg: `backgroundHeader`,
+                    border: `2px solid`,
+                    color: `primary`,
+                  }
+                }
+              >
+                Sign up
+              </Button>
               <p sx={{ variant: `text.tagline`, m: `0px` }}>
                 By clicking on Sing up you agree to our Terms of service and
                 privacy policy.
@@ -90,11 +103,14 @@ export const NewsletterForm = () => {
 };
 
 export const LightNewsletterForm = () => {
-  const [value, setValue] = useState({
-    name: "",
-    email: ""
-  });
-  console.log(value);
+  const name = useFormInput("");
+  const email = useFormInput("");
+
+  let disabled = true;
+  if (name.value !== "" && email.value !== "") {
+    disabled = false;
+  }
+
   return (
     <LightSignUpContainer>
       <h4 sx={{ mt: `0px`, color: `text` }}>Our newsletter</h4>
@@ -104,11 +120,22 @@ export const LightNewsletterForm = () => {
       </p>
       <FormContainer>
         <GridContainer>
-          <Input placeholder="Your name" />
-          <Input placeholder="Your email" />
+          <Input placeholder="Your name" type="text" {...name} />
+          <Input placeholder="Your email" type="email" {...email} />
         </GridContainer>
         <GridContainer>
-          <Button>Sign up</Button>
+          <Button
+            disabled={disabled}
+            sx={
+              disabled && {
+                bg: `backgroundHeader`,
+                border: `2px solid`,
+                color: `primary`,
+              }
+            }
+          >
+            Sign up
+          </Button>
           <p sx={{ variant: `text.tagline`, m: `0px` }}>
             By clicking on Sing up you agree to our Terms of service and privacy
             policy.

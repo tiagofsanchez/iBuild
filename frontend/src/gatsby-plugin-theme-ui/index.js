@@ -110,7 +110,7 @@ export default {
       margin: "auto",
       padding: 4,
     },
-    mainFrameworks: { 
+    mainFrameworks: {
       width: ["90%", "90%", "1100px"],
       margin: "auto",
     },
@@ -119,16 +119,16 @@ export default {
       margin: `auto`,
       width: ["90%", "80%", "90%"],
     },
-    searchBar: { 
+    searchBar: {
       width: ["90%", "80%", "900px"],
       margin: `auto`,
       color: "text",
     },
-    searchMain : { 
+    searchMain: {
       width: ["90%", "90%", "1100px"],
       margin: "auto",
     },
-    searchFooter : {
+    searchFooter: {
       width: ["90%", "80%", "900px"],
     },
     frameworkName: {
@@ -152,6 +152,8 @@ export default {
   buttons: {
     primary: {
       cursor: "pointer",
+      border: `2px solid`,
+      borderColor: `primary`,
     },
     icon: {
       width: "auto",
@@ -168,7 +170,7 @@ export default {
   },
   cards: {
     primary: {
-      width: [ "250px","350px","350px"],
+      width: ["250px", "350px", "350px"],
       borderRadius: 15,
       background: `white`,
       cursor: "pointer",

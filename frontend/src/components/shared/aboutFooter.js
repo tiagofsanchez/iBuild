@@ -15,7 +15,6 @@ const AboutFooter = () => {
         to create a community of like minded people that are passionate about
         working with startups and helping them grow by working with cooperates.
       </p>
-      <p>Join our Slack channel</p>
     </AboutFooterContainer>
   );
 };
