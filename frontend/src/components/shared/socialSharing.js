@@ -3,7 +3,9 @@ import { jsx, IconButton } from "theme-ui";
 import styled from "@emotion/styled";
 import copy from "copy-to-clipboard";
 import { useState } from "react";
+import { useLocation } from "@reach/router";
 
+import useSiteMetadata from '../../hooks/useSiteMetadata'
 import LinkIcon from "../../svgs/linkIcon.svg";
 import LinkedInIcon from "../../svgs/linkedInIcon.svg";
 import FbIcon from "../../svgs/fbIcon.svg";
@@ -18,7 +20,9 @@ const SocialContainer = styled.div`
 
 const SocialSharing = () => {
   const [isCopied, setIsCopied] = useState(false);
-  const url = window.location.href;
+  const {siteUrl} = useSiteMetadata()
+  const { pathname } = useLocation();
+  const url = `${siteUrl}${pathname}`;
 
   const handleCopyLink = () => {
     copy(url);

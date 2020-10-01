@@ -25,7 +25,7 @@ const SEO = ({ title, description, image }) => {
       htmlAttributes={{ siteLanguage }}
       title={seo.title}
       defaultTitle={seo.title}
-    //   titleTemplate={titleTemplate}
+      titleTemplate={` ${siteTitle} - ${seo.title}`}
     />
   );
 };
