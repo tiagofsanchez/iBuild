@@ -2,7 +2,7 @@
 import { jsx, Box, Input, Button } from "theme-ui";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
-import { navigate } from "gatsby"
+import { navigate } from "gatsby";
 
 import useImage from "../../hooks/useImages";
 import useFormInput from "../../hooks/useFormInput";
@@ -49,7 +49,6 @@ const GridContainer = styled.div`
   grid-gap: 10px;
 `;
 
-
 export const NewsletterForm = () => {
   const { imgHero } = useImage();
   const name = useFormInput("");
@@ -58,7 +57,7 @@ export const NewsletterForm = () => {
   const onFormSubmithandler = (e) => {
     e.preventDefault();
     addEmailToConvertKit(name.value, email.value);
-    navigate('/success')
+    navigate("/success");
   };
 
   let disabled = true;
@@ -113,11 +112,11 @@ export const NewsletterForm = () => {
 export const LightNewsletterForm = () => {
   const name = useFormInput("");
   const email = useFormInput("");
-  
+
   const onFormSubmithandler = (e) => {
     e.preventDefault();
     addEmailToConvertKit(name.value, email.value);
-    navigate('/success')
+    navigate("/success");
   };
 
   let disabled = true;

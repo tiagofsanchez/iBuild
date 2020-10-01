@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 
 import { frameworksToArray } from '../utils/helpers'
 
-import { Layout } from "../components/shared/layout";
+import { Layout , LandingPageLayout} from "../components/shared/layout";
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import FooterSubscription from '../components/shared/footerSubscription';
 
@@ -18,14 +18,14 @@ const Frameworks = ({ data }) => {
   const allFrameworks = frameworksToArray(data.allStrapiFrameworks.edges)
 
   return (
-    <Layout withHero={true}>
+    <LandingPageLayout>
       <PageContainer>
         <section sx={{ variant: `layout.searchMain`, mb: 6}}>
           <FrameworkCardList allFrameworks={allFrameworks} />
         </section>
       </PageContainer>
       <FooterSubscription />
-    </Layout>
+    </LandingPageLayout>
   );
 };
 
