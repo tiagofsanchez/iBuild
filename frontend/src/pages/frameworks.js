@@ -3,11 +3,11 @@ import { jsx } from "theme-ui";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 
-import { frameworksToArray } from '../utils/helpers'
+import { frameworksToArray } from "../utils/helpers";
 
-import { Layout , LandingPageLayout} from "../components/shared/layout";
+import { LandingPageLayout } from "../components/shared/layout";
 import FrameworkCardList from "../components/shared/frameworkCardList";
-import FooterSubscription from '../components/shared/footerSubscription';
+import FooterSubscription from "../components/shared/footerSubscription";
 
 const PageContainer = styled.div`
   display: grid;
@@ -15,12 +15,12 @@ const PageContainer = styled.div`
 `;
 
 const Frameworks = ({ data }) => {
-  const allFrameworks = frameworksToArray(data.allStrapiFrameworks.edges)
+  const allFrameworks = frameworksToArray(data.allStrapiFrameworks.edges);
 
   return (
     <LandingPageLayout>
       <PageContainer>
-        <section sx={{ variant: `layout.searchMain`, mb: 6}}>
+        <section sx={{ variant: `layout.searchMain`, mb: 6 }}>
           <FrameworkCardList allFrameworks={allFrameworks} />
         </section>
       </PageContainer>

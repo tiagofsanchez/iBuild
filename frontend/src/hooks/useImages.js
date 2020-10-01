@@ -9,11 +9,13 @@ const useImages = () => {
             ...GatsbyImageSharpFluid
           }
         }
+        publicURL
       }
     }
   `);
   const imgHero = data.hero.childImageSharp.fluid;
-  return { imgHero };
+  const logo = data.hero.publicURL;
+  return { imgHero, logo };
 };
 
 export default useImages;

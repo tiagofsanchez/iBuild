@@ -12,7 +12,10 @@ const Success = () => (
           textShadow: `0px 10px 20px rgba(0, 0, 0, 0.25)`,
         }}
       >
-        🙏 Thank you for subscribing!
+        <span role="img" aria-labelledby="Thank you icon">
+          🙏{" "}
+        </span>
+        Thank you for subscribing!
       </h1>
       <p>
         I’m really excited you’re here. There’s just one more thing left to do:
