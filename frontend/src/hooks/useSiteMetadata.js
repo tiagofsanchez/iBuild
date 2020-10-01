@@ -5,6 +5,7 @@ const useSiteMetadata = () => {
     {
       site {
         siteMetadata {
+          author
           siteTitle
           siteDescription
           siteLanguage
@@ -23,6 +24,8 @@ const useSiteMetadata = () => {
   const siteDescription = data.site.siteMetadata.siteDescription;
   const siteLanguage = data.site.siteMetadata.siteLanguage;
   const siteUrl = data.site.siteMetadata.siteUrl;
+  const author = data.site.siteMetadata.author;
+
   return {
     appPath,
     blogPath,
@@ -31,6 +34,7 @@ const useSiteMetadata = () => {
     siteDescription,
     siteLanguage,
     siteUrl,
+    author
   };
 };
 

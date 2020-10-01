@@ -8,6 +8,7 @@ import { frameworksToArray } from "../utils/helpers";
 import { LandingPageLayout } from "../components/shared/layout";
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import FooterSubscription from "../components/shared/footerSubscription";
+import SEO from "../components/shared/seo";
 
 const PageContainer = styled.div`
   display: grid;
@@ -19,6 +20,7 @@ const Frameworks = ({ data }) => {
 
   return (
     <LandingPageLayout>
+      <SEO />
       <PageContainer>
         <section sx={{ variant: `layout.searchMain`, mb: 6 }}>
           <FrameworkCardList allFrameworks={allFrameworks} />

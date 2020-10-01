@@ -2,9 +2,11 @@
 import { jsx } from "theme-ui";
 
 import { LandingPageLayout } from "../components/shared/layout";
+import SEO from "../components/shared/seo";
 
 const Success = () => (
   <LandingPageLayout>
+    <SEO />
     <section sx={{ height: `100vh`, variant: `layout.main` }}>
       <h1
         sx={{

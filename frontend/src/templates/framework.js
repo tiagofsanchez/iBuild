@@ -11,12 +11,13 @@ import { Layout } from "../components/shared/layout";
 import FrameworkCardList from "../components/shared/frameworkCardList";
 import SocialSharing from "../components/shared/socialSharing";
 import FooterSubscription from "../components/shared/footerSubscription";
+import SEO from "../components/shared/seo";
 
 const FrameworkHeader = styled.div`
   padding: 50px;
   backdrop-filter: blur(250px);
   box-shadow: 0px 5px 5px rgba(57, 19, 184, 0.07);
- margin: auto;
+  margin: auto;
 `;
 
 const Grid = styled.div`
@@ -54,6 +55,11 @@ const Framework = ({ pageContext, data }) => {
 
   return (
     <Layout withHero={true}>
+      <SEO
+        title={strapiFrameworks.name}
+        description={strapiFrameworks.description}
+        image={strapiFrameworks.icon.publicURL}
+      />
       <FrameworkHeader
         sx={{
           variant: `layout.frameworkName`,
@@ -111,6 +117,7 @@ export const framework = graphql`
             ...GatsbyImageSharpFluid
           }
         }
+        publicURL
       }
     }
     discovering: allStrapiFrameworks(

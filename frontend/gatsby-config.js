@@ -3,6 +3,7 @@ const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
+    author: "tiagofsanchez",
     siteTitle: "Build Stuff",
     siteDescription:
       "More than a collection of frameworks and a taxonomy directory, we want to create a community of like minded people.",
