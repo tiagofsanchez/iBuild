@@ -14,16 +14,18 @@ exports.createPages = async function ({ actions, graphql }) {
       site { 
         siteMetadata {
           frameworkPath
+          appPath
         }
       }
     }
   `)
 
   const frameworkPath = data.site.siteMetadata.frameworkPath
+  const appPath = data.site.siteMetadata.appPath
   data.allStrapiFrameworks.edges.forEach(edge => {
     const slug = edge.node.name
     actions.createPage({
-      path: `${frameworkPath}/${_.kebabCase(slug)}`,
+      path: `${appPath}${frameworkPath}/${_.kebabCase(slug)}`,
       component: frameworksComponent,
       context: { name: slug },
     })

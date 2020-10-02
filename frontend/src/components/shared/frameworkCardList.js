@@ -18,12 +18,12 @@ const Container = styled.div`
 `;
 
 const FrameworkCardList = ({ allFrameworks }) => {
-  const { frameworkPath } = useSiteMetadata();
+  const { frameworkPath , appPath } = useSiteMetadata();
 
   return (
     <Container>
       {allFrameworks.map((framework) => {
-        const url = `${frameworkPath}/${_.kebabCase(framework.name)}` 
+        const url = `${appPath}${frameworkPath}/${_.kebabCase(framework.name)}` 
         return (
           <FrameworkCard
             {...framework}

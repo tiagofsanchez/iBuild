@@ -24,5 +24,5 @@ I still have plenty of things todo and will try to build them on the next couple
 - [x] Implement different layouts 
 - [x] Footer
 - [x] CMS integration (strapi) 
-- [ ] 404 page
+- [X] 404 page
 
