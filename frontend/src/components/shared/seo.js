@@ -29,7 +29,7 @@ const SEO = ({ title, description, image }) => {
     titleTemplate = ` ${siteTitle} - ${seo.title}`;
   }
 
-  console.log(seo)
+  console.log(seo);
 
   return (
     <Helmet
@@ -56,7 +56,7 @@ const SEO = ({ title, description, image }) => {
       <meta name="twitter:image" content={seo.image} />
       <meta name="twitter:image:alt" content={seo.description} />
       <meta name="twitter:creator" content={author} />
-      <meta name="Tiago Sanchez" content="Tiago Sanchez" />
+      <meta name="TiagoSanchez" content="TiagoSanchez" />
     </Helmet>
   );
 };

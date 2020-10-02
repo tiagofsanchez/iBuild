@@ -34,7 +34,7 @@ const useSiteMetadata = () => {
     siteDescription,
     siteLanguage,
     siteUrl,
-    author
+    author,
   };
 };
 

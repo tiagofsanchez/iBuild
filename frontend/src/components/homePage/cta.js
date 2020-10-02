@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const TextContainer = styled.div`
   display: grip;
-  @media (max-width: 1050px) { 
+  @media (max-width: 1050px) {
     text-align: center;
   }
 `;

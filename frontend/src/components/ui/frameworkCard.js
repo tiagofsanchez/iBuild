@@ -1,16 +1,18 @@
 /** @jsx jsx */
-import { jsx, Card, Box , Grid} from "theme-ui";
+import { jsx, Card, Box, Grid } from "theme-ui";
 import { Link } from "gatsby";
-import Img from 'gatsby-image';
+import Img from "gatsby-image";
 
-const FrameworkCard = ({ name, teaser, caption, url , icon }) => {
+const FrameworkCard = ({ name, teaser, caption, url, icon }) => {
   return (
     <Card>
-      <Link to={url} sx={{textDecoration: `none`}}>
+      <Link to={url} sx={{ textDecoration: `none` }}>
         <Box sx={{ variant: `cards.header` }}>
-          <Grid sx={{ width: `252px`, textAlign: `center` , justifyItems: `center` }}>
-            <div sx={{width:'120px'}}>
-            <Img fluid={icon}/>
+          <Grid
+            sx={{ width: `252px`, textAlign: `center`, justifyItems: `center` }}
+          >
+            <div sx={{ width: "120px" }}>
+              <Img fluid={icon} />
             </div>
             <h4 sx={{ m: `0px`, color: `text` }}>{name}</h4>
           </Grid>

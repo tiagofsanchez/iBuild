@@ -32,5 +32,4 @@ const FooterSubscription = () => {
   );
 };
 
-
-export default FooterSubscription
+export default FooterSubscription;

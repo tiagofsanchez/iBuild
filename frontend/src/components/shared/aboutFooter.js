@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
 
 const AboutFooterContainer = styled.div`
- width: 100%
+  width: 100%;
 `;
 
 const AboutFooter = () => {

@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 
 import { frameworksToArray } from "../utils/helpers";
 
-import SEO from '../components/shared/seo'
+import SEO from "../components/shared/seo";
 import { LandingPageLayout } from "../components/shared/layout";
 import Cta from "../components/homePage/cta";
 import Impact from "../components/homePage/impact";

@@ -1,4 +1,4 @@
-import axios from 'axios'; 
+import axios from "axios";
 
 const convertkit_api_key = process.env.GATSBY_CONVERTKIT_API_KEY;
 const convertkit_form = process.env.GATSBY_CONVERTKIT_FORM;
