@@ -8,6 +8,9 @@ exports.createPages = async function ({ actions, graphql }) {
         edges {
           node {
             name
+            type { 
+              type
+            }
           }
         }
       }
@@ -24,10 +27,11 @@ exports.createPages = async function ({ actions, graphql }) {
   const appPath = data.site.siteMetadata.appPath;
   data.allStrapiFrameworks.edges.forEach((edge) => {
     const slug = edge.node.name;
+    const type = edge.node.type.type
     actions.createPage({
       path: `${appPath}${frameworkPath}/${_.kebabCase(slug)}`,
       component: frameworksComponent,
-      context: { name: slug },
+      context: { name: slug , type },
     });
   });
 };

@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import Img from "gatsby-image";
 import ReactMarkdown from "react-markdown";
 
-import { frameworksToArray, LowerCaseString } from "../utils/helpers";
+import { frameworksToArray } from "../utils/helpers";
 
 import { Layout } from "../components/shared/layout";
 import FrameworkCardList from "../components/shared/frameworkCardList";
@@ -32,26 +32,8 @@ const Grid = styled.div`
 
 const Framework = ({ pageContext, data }) => {
   const framework = pageContext.name;
-  const { strapiFrameworks, discovering, building, scaling } = data;
-
-  const frameworkType = LowerCaseString(strapiFrameworks.type.type);
-
-  let allFrameworks = [];
-  if (frameworkType === "discovering") {
-    allFrameworks = frameworksToArray(
-      discovering.edges.filter(
-        (fram) => fram.node.name !== strapiFrameworks.name
-      )
-    );
-  } else if (frameworkType === `building`) {
-    allFrameworks = frameworksToArray(
-      building.edges.filter((fram) => fram.node.name !== strapiFrameworks.name)
-    );
-  } else {
-    allFrameworks = frameworksToArray(
-      scaling.edges.filter((fram) => fram.node.name !== strapiFrameworks.name)
-    );
-  }
+  const { strapiFrameworks, otherFrameworks } = data;
+  const allFrameworks = frameworksToArray(otherFrameworks.edges);
 
   return (
     <Layout withHero={true}>
@@ -100,7 +82,7 @@ const Framework = ({ pageContext, data }) => {
 };
 
 export const framework = graphql`
-  query MyQuery($name: String!) {
+  query MyQuery($name: String!, $type: String!) {
     strapiFrameworks(name: { eq: $name }) {
       name
       teaser
@@ -120,52 +102,8 @@ export const framework = graphql`
         publicURL
       }
     }
-    discovering: allStrapiFrameworks(
-      filter: { type: { type: { eq: "Discovering" } } }
-      limit: 3
-    ) {
-      edges {
-        node {
-          name
-          teaser
-          caption
-          type {
-            type
-          }
-          icon {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-    building: allStrapiFrameworks(
-      filter: { type: { type: { eq: "Building" } } }
-      limit: 3
-    ) {
-      edges {
-        node {
-          name
-          teaser
-          caption
-          type {
-            type
-          }
-          icon {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-    scaling: allStrapiFrameworks(
-      filter: { type: { type: { eq: "Scaling" } } }
+    otherFrameworks: allStrapiFrameworks(
+      filter: { name: { ne: $name }, type: { type: { eq: $type } } }
       limit: 3
     ) {
       edges {
