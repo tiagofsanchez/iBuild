@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
 
 import useSiteMetadata from "../../hooks/useSiteMetadata";
-import FrameworkCard from "../ui/frameworkCard";
+import FrameworkCard from "./frameworkCard";
 
 const _ = require("lodash");
 
