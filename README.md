@@ -12,16 +12,16 @@ Check the [LIVE DEMO](https://ikit.netlify.app/)
 
 I still have plenty of things todo and will try to build them on the next couple of days
 
-- [ ] Story Book implementation
-- [ ] React Helmet
-- [ ] SEO component
-- [ ] Link the form
+- [ ] Story Book implementation (probably not going to do atm)
+- [x] React Helmet
+- [x] SEO component
+- [x] Link the form
 - [x] Build framework template page
 - [ ] Search page
 - [ ] About page
 - [ ] Search implementation
 - [x] Share components
-- [x] Implement different layouts 
+- [x] Implement different layouts
 - [x] Footer
-- [x] CMS integration (strapi) 
-
+- [x] CMS integration (strapi)
+- [x] 404 page
