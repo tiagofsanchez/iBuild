@@ -179,19 +179,8 @@ export default {
         boxShadow: "0px 5px 10px #8352FD",
       },
     },
-    header: {
-      borderRadius: "6px 6px 0px 0px",
-      display: `grid`,
-      justifyContent: `center`,
-      bg: "backgroundHeader",
-      p: 3,
-    },
-    description: {
-      display: `grid`,
-      p: 3,
-    },
     formCard: {
-      width: ["100%", "100%", "100%", "1024px"],
+      width: [ "100%", "100%", "1024px"],
       margin: "auto",
       borderRadius: 15,
       bg: "background",
