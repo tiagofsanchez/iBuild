@@ -19,7 +19,7 @@ const Impact = () => {
         Learn all you need to make and impact
       </h2>
       <p sx={{ color: `textOpacity` }}>
-        The Innovation space if full of difficult words, terminologies and fancy
+        The Innovation space is full of difficult words, terminologies and fancy
         frameworks. Here you will find everything that you need to know.
       </p>
     </Container>
