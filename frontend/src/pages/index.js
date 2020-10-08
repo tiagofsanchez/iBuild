@@ -37,7 +37,7 @@ const Vector2Container = styled.div`
 const Index = ({ data }) => {
   const { allStrapiFrameworks } = data;
   const allFrameworks = frameworksToArray(allStrapiFrameworks.edges);
-
+  
   return (
     <LandingPageLayout>
       <SEO />

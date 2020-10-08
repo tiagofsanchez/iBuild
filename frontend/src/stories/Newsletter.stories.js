@@ -2,7 +2,6 @@ import React from "react";
 import { ThemeProvider } from "theme-ui";
 import theme from "../gatsby-plugin-theme-ui/index";
 import {
-  NewsletterForm,
   LightNewsletterForm,
 } from "../components/shared/newsletterForm";
 
