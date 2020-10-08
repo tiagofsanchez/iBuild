@@ -30,6 +30,16 @@ module.exports = {
     // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
     config.resolve.mainFields = ["browser", "module", "main"];
   
+
+    //   // TODO: Figure out why Gatsby is throwing this error:
+    // // 'The result of this StaticQuery could not be fetched' & remove this alias.
+    // config.plugins.unshift(
+    //   new webpack.NormalModuleReplacementPlugin(
+    //     /lib\/useSiteMetadata\.js/,
+    //     '../../../.storybook/useSiteMetadata.js'
+    //   )
+    // );
+
     return config;
   },
 }
