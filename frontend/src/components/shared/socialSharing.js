@@ -14,8 +14,6 @@ const SocialContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 44px) auto;
   grid-gap: 5px;
-  justify-items: start;
-  align-items: center;
 `;
 
 const SocialSharing = () => {
@@ -32,25 +30,25 @@ const SocialSharing = () => {
     }, 4000);
   };
 
+  console.log(FbIcon);
   return (
     <SocialContainer>
-      <IconButton
-        sx={{ bg: `primary`, variant: `buttons.share` }}
-        alt="Share on Facebook"
-      >
-        <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>
+      <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>
+        <IconButton
+          sx={{ bg: `primary`, variant: `buttons.share` }}
+          alt="Share on Facebook"
+        >
           <FbIcon />
-        </a>
-      </IconButton>
-      <IconButton
-        sx={{ bg: `primary`, variant: `buttons.share` }}
-        alt="Share on LinkedIn"
-      >
-        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}>
+        </IconButton>
+      </a>
+      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}>
+        <IconButton
+          sx={{ bg: `primary`, variant: `buttons.share` }}
+          alt="Share on LinkedIn"
+        >
           <LinkedInIcon />
-        </a>
-      </IconButton>
-
+        </IconButton>
+      </a>
       <IconButton
         sx={{ bg: `primary`, variant: `buttons.share` }}
         alt="Copy link "

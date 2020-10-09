@@ -163,6 +163,8 @@ export default {
     share: {
       width: `40px`,
       height: `40px`,
+      display: `grid`,
+      alignContent: `center`,
       "&:hover": {
         bg: `primary2`,
       },
