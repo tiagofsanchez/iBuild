@@ -9,9 +9,9 @@ const _ = require("lodash");
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
   grid-gap: 20px;
-  justify-items: center;
+  justify-content: center;
   @media (max-width: 820px) {
     grid-template-columns: auto;
   }
