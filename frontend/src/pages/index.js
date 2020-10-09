@@ -49,7 +49,7 @@ const Index = ({ data }) => {
           <Impact />
         </section>
         <section>
-          <div sx={{ variant: `layout.main` }}>
+          <div sx={{ variant: `layout.main`, pt: `0px` }}>
             <h2 sx={{ color: `text`, mt: `0px` }}>Frameworks</h2>
             <p sx={{ variant: `text.tagline` }}>Our most popular</p>
           </div>
@@ -60,7 +60,7 @@ const Index = ({ data }) => {
             <Vector />
           </VectorContainer>
         </section>
-        <section sx={{ variant: `layout.main` }}>
+        <section sx={{ variant: `layout.mainFrameworks` }}>
           <NewsletterForm />
         </section>
         <Vector2Container>

@@ -10,7 +10,7 @@ import { addEmailToConvertKit } from "../../utils/apis";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 280px auto;
   @media (max-width: 768px) {
     grid-template-columns: auto;
     grid-template-rows: 200px 1fr;

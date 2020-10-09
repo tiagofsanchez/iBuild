@@ -182,7 +182,7 @@ export default {
       },
     },
     formCard: {
-      width: ["100%", "100%", "1024px"],
+      width: ["100%", "100%", "100%"],
       margin: "auto",
       borderRadius: 15,
       bg: "background",
