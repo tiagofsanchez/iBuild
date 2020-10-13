@@ -16,7 +16,7 @@ const Impact = () => {
   return (
     <Container>
       <h2 sx={{ my: `0px`, color: `text` }}>
-        Learn all you need to make and impact
+        Learn all you need to make an impact
       </h2>
       <p sx={{ color: `textOpacity` }}>
         The Innovation space is full of difficult words, terminologies and fancy
