@@ -69,7 +69,7 @@ export const NewsletterForm = () => {
     <Box sx={{ variant: `cards.formCard` }}>
       <Container>
         <IconContainer sx={{ bg: `naturalDark` }}>
-          <div sx={{ width: `auto` }}>
+          <div sx={{ width: `280px`, margin: `auto` }}>
             <Img fluid={imgHero} />
           </div>
         </IconContainer>

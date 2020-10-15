@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
 import MenuButton from "./menuButton";
-import IkLogo from "../../svgs/iKlogo.svg";
+import FramesupLogo from "../../svgs/framsupLogo.svg";
 
 const Container = styled.div`
   display: flex;
@@ -81,7 +81,7 @@ const Menu = ({ backdropHandler, isOpen }) => {
       <Container>
         <Link to="/" sx={{ variant: `links.primary` }}>
           <IconContainer>
-            <IkLogo />
+            <FramesupLogo />
           </IconContainer>
         </Link>
         <NavDesktop>{menuNavItems}</NavDesktop>
