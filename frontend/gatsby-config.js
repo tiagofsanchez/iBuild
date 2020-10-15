@@ -4,9 +4,9 @@ const path = require(`path`);
 module.exports = {
   siteMetadata: {
     author: "tiagofsanchez",
-    siteTitle: "Build Stuff",
+    siteTitle: "Framsup",
     siteDescription:
-      "More than a collection of frameworks and a taxonomy directory, we want to create a community of like minded people.",
+      "Tools and tricks of this generation, to build the success stories of the next one.",
     siteLanguage: "en",
     siteUrl: "https://ikit.netlify.app/",
     blogPath: `/blog`,

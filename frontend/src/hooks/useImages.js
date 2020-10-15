@@ -11,10 +11,18 @@ const useImages = () => {
         }
         publicURL
       }
+      logo: file(relativePath: { eq: "framsupLogo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+        publicURL
+      }
     }
   `);
   const imgHero = data.hero.childImageSharp.fluid;
-  const logo = data.hero.publicURL;
+  const logo = data.logo.publicURL;
   return { imgHero, logo };
 };
 

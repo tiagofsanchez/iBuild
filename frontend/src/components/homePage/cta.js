@@ -33,11 +33,10 @@ const Cta = () => {
             textShadow: `0px 10px 20px rgba(0, 0, 0, 0.25)`,
           }}
         >
-          Engaging with Startups
+          Frameworks to power growth
         </h1>
         <p sx={{ color: `text2` }}>
-          Don’t just try to make an impact. Do it with the right tools. Get the
-          right taxonomy. Drive change in your organization.
+        Tools and tricks of this generation, to build the success stories of the next one.
         </p>
       </TextContainer>
       <div sx={{ width: `auto` }}>

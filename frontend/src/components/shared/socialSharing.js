@@ -32,7 +32,11 @@ const SocialSharing = () => {
 
   return (
     <SocialContainer>
-      <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>
+      <a
+        href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+        target="_blank"
+        rel="noreferrer"
+      >
         <IconButton
           sx={{ bg: `primary`, variant: `buttons.share` }}
           alt="Share on Facebook"
@@ -40,7 +44,11 @@ const SocialSharing = () => {
           <FbIcon />
         </IconButton>
       </a>
-      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}>
+      <a
+        href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
+        target="_blank"
+        rel="noreferrer"
+      >
         <IconButton
           sx={{ bg: `primary`, variant: `buttons.share` }}
           alt="Share on LinkedIn"
