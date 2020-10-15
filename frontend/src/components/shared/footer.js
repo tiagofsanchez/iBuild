@@ -23,7 +23,7 @@ const Footer = () => {
       <footer sx={{ variant: `layout.footer`, textAlign: `center` }}>
         <Flex>
           <p sx={{ my: `0px`, mx: `10px`, color: `text2` }}>Designed by</p>
-          <a href="https://www.tiagofsanchez.com/" target="_blank">
+          <a href="https://www.tiagofsanchez.com/" target="_blank" rel="noreferrer">
             <img src={tfs} width="25px" alt="Tiago F Sanchez" />
           </a>
         </Flex>

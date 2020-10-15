@@ -34,6 +34,8 @@ const Framework = ({ pageContext, data }) => {
   const framework = pageContext.name;
   const { strapiFrameworks, otherFrameworks } = data;
   const allFrameworks = frameworksToArray(otherFrameworks.edges);
+  const slide = strapiFrameworks.frameworkSlide;
+  console.log(slide)
 
   return (
     <Layout withHero={true}>
@@ -66,6 +68,13 @@ const Framework = ({ pageContext, data }) => {
         <ReactMarkdown source={strapiFrameworks.whoToUse} />
         <h3>Framework explanation</h3>
         <ReactMarkdown source={strapiFrameworks.theFramework} />
+        {slide && (
+          <div>
+            <h3>Slide</h3>
+            <p>Here you will find a slide example. Soon we will implement a feature for anyone to download all the tools that we are building.</p>
+            <Img fluid={slide.childImageSharp.fluid} />
+          </div>
+        )}
       </section>
       <section sx={{ variant: `layout.frameworkMain`, pt: `0px` }}>
         <SocialSharing />
@@ -100,6 +109,13 @@ export const framework = graphql`
           }
         }
         publicURL
+      }
+      frameworkSlide {
+        childImageSharp {
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
     otherFrameworks: allStrapiFrameworks(

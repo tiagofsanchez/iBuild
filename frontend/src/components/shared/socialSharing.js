@@ -30,7 +30,6 @@ const SocialSharing = () => {
     }, 4000);
   };
 
-  console.log(FbIcon);
   return (
     <SocialContainer>
       <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>

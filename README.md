@@ -12,7 +12,7 @@ Check the [LIVE DEMO](https://ikit.netlify.app/)
 
 I still have plenty of things todo and will try to build them on the next couple of days
 
-- [ ] Story Book implementation (probably not going to do atm)
+- [x] Story Book implementation (probably not going to do atm)
 - [x] React Helmet
 - [x] SEO component
 - [x] Link the form
