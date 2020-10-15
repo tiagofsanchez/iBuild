@@ -35,7 +35,7 @@ const Framework = ({ pageContext, data }) => {
   const { strapiFrameworks, otherFrameworks } = data;
   const allFrameworks = frameworksToArray(otherFrameworks.edges);
   const slide = strapiFrameworks.frameworkSlide;
-  console.log(slide)
+  console.log(slide);
 
   return (
     <Layout withHero={true}>
@@ -71,7 +71,10 @@ const Framework = ({ pageContext, data }) => {
         {slide && (
           <div>
             <h3>Slide</h3>
-            <p>Here you will find a slide example. Soon we will implement a feature for anyone to download all the tools that we are building.</p>
+            <p>
+              Here you will find a slide example. Soon we will implement a
+              feature for anyone to download all the tools that we are building.
+            </p>
             <Img fluid={slide.childImageSharp.fluid} />
           </div>
         )}
