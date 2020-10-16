@@ -8,7 +8,7 @@ module.exports = {
     siteDescription:
       "Tools and tricks of this generation, to build the success stories of the next one.",
     siteLanguage: "en",
-    siteUrl: "https://ikit.netlify.app/",
+    siteUrl: "https://www.framsup.com/",
     blogPath: `/blog`,
     appPath: `/app`,
     frameworkPath: `/framework`,
@@ -56,5 +56,22 @@ module.exports = {
         queryLimit: 1000,
       },
     },
+    { 
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Framsup`,
+        short_name: `Framsup`,
+        lang: `en`,
+        description:
+          "Tools and tricks of this generation, to build the success stories of the next one.",
+        start_url: `/?source=pwa'`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `./src/images/framsupLogo.png`,
+      },
+      
+    },
+    `gatsby-plugin-offline` 
   ],
 };
