@@ -3,13 +3,20 @@ import { ThemeProvider, jsx, IconButton } from "theme-ui";
 import theme from "../gatsby-plugin-theme-ui/index";
 import styled from "@emotion/styled";
 
-import iMac from "../images/iMac.png";
-import iKLogo from "../images/iKLogo.png";
+import framsupIlustration from "../images/framsupIlustration.png";
+import framsupLogo from "../images/framsupLogo.png";
 import buy from "../images/buyBuildPartner.png";
 import framing from "../images/problemFraming.png";
 import validation from "../images/problemValidation.png";
 import sourcing from "../images/sourcingStartups.png";
 import unfair from "../images/unfairAdvantage.png";
+import dealFlow from '../images/dealFlow.png'
+import assumptionMapper from '../images/assumptionMapper.png'
+import businessModel from '../images/businessModel.png'
+import experimentDesigner from '../images/experimentDesigner.png'
+import jobsToBeDone from '../images/jobsToBeDone.png'
+import personaBuilder from '../images/personaBuilder.png'
+import valueProposition from '../images/valueProposition.png'
 
 import FBIcon from "../svgs/fbIcon.svg";
 import LIIcon from "../svgs/linkedInIcon.svg";
@@ -27,13 +34,20 @@ const ImageContainer = styled.div`
 `;
 
 const images = [
-  { name: "Logo at the moment", image: iKLogo },
-  { name: "Hero", image: iMac },
+  { name: "Logo at the moment", image: framsupLogo },
+  { name: "Hero", image: framsupIlustration },
   { name: "Buy Build Partner", image: buy },
   { name: "Problem Framing ", image: framing },
   { name: "Problem Validation", image: validation },
   { name: "Sourcing Startups", image: sourcing },
+  { name: "Deal Flow", image: dealFlow },
   { name: "Unfair Advantage", image: unfair },
+  { name: "Assumption Mapper", image: assumptionMapper },
+  { name: "Business Model", image: businessModel },
+  { name: "Experiment Designer", image: experimentDesigner },
+  { name: "Jobs To Be Done", image: jobsToBeDone },
+  { name: "Persona Builder", image: personaBuilder },
+  { name: "Value Proposition", image: valueProposition },
 ];
 
 const svgLogos = [
@@ -52,7 +66,7 @@ export const FrameworksLogos = () => (
     <h1>Framework PNG's logos</h1>
     <p>
       The Logos needed to be converted to PNG so that we can used them with
-      cloudinary and graphQL could read it
+      cloudinary and graphQL could read them. You can find them in `src/images`
     </p>
     <ImageContainer>
       {images.map((image) => (
