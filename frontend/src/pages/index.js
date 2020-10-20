@@ -10,8 +10,8 @@ import { LandingPageLayout } from "../components/shared/layout";
 import Cta from "../components/homePage/cta";
 import Impact from "../components/homePage/impact";
 import Vector from "../svgs/vector.svg";
-import FrameworkCardList from "../components/shared/frameworkCardList";
 import Vector2 from "../svgs/vector2.svg";
+import FrameworkSample from "../components/homePage/frameworkSample";
 import { NewsletterForm } from "../components/shared/newsletterForm";
 
 const Container = styled.div`
@@ -49,13 +49,7 @@ const Index = ({ data }) => {
           <Impact />
         </section>
         <section>
-          <div sx={{ variant: `layout.main`, pt: `0px` }}>
-            <h2 sx={{ color: `text`, mt: `0px` }}>Frameworks</h2>
-            <p sx={{ variant: `text.tagline` }}>Our most popular</p>
-          </div>
-          <div sx={{ variant: `layout.mainFrameworks` }}>
-            <FrameworkCardList allFrameworks={allFrameworks} />
-          </div>
+          <FrameworkSample allFrameworks={allFrameworks} />
           <VectorContainer>
             <Vector />
           </VectorContainer>
@@ -73,7 +67,7 @@ const Index = ({ data }) => {
 
 export const query = graphql`
   {
-    allStrapiFrameworks {
+    allStrapiFrameworks(sort: { order: ASC, fields: name }) {
       edges {
         node {
           type {

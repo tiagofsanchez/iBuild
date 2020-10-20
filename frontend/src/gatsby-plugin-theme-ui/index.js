@@ -155,6 +155,13 @@ export default {
       border: `2px solid`,
       borderColor: `primary`,
     },
+    secondary: { 
+      bg: `pink`,
+      "&:focus": {
+        bg:`red`
+      }
+
+    },
     icon: {
       width: "auto",
       height: "auto",

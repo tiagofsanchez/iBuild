@@ -33,7 +33,7 @@ const Frameworks = ({ data }) => {
 
 export const search = graphql`
   query MySearch {
-    allStrapiFrameworks {
+    allStrapiFrameworks(sort: { order: ASC, fields: name }) {
       edges {
         node {
           type {
