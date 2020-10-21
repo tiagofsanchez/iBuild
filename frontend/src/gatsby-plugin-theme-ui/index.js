@@ -91,6 +91,9 @@ export default {
         fontFamily: "body",
         fontWeight: "body",
         color: "text",
+        "&::selection": { 
+          bg:`backgroundHeader`,
+        },
       },
       li: {
         fontSize: [17, 20, 20],
@@ -156,11 +159,11 @@ export default {
       borderColor: `primary`,
     },
     secondary: { 
-      bg: `pink`,
-      "&:focus": {
-        bg:`red`
-      }
-
+      bg: `backgroundHeader`,
+      color: `primary`,
+      p: 1,
+      borderColor: `background`,
+      borderRadius: 8,
     },
     icon: {
       width: "auto",
