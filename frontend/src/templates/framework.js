@@ -1,71 +1,39 @@
 /** @jsx jsx */
-import { IconButton, jsx, Box } from "theme-ui";
+import { jsx } from "theme-ui";
 import { graphql } from "gatsby";
-import styled from "@emotion/styled";
-import Img from "gatsby-image";
-import ReactMarkdown from "react-markdown";
 import { useState } from "react";
 
 import useSiteMetadata from "../hooks/useSiteMetadata";
-import { frameworksToArray, urlPath } from "../utils/helpers";
+import { urlPath } from "../utils/helpers";
 
 import { Layout } from "../components/shared/layout";
-import FrameworkCardList from "../components/shared/frameworkCardList";
-import SocialSharing from "../components/shared/socialSharing";
 import FooterSubscription from "../components/shared/footerSubscription";
 import SEO from "../components/shared/seo";
+import Header from "../components/frameworkPage/header";
+import FrameworkContent from "../components/frameworkPage/frameworkContent";
+import FrameworkSharing from "../components/frameworkPage/frameworkSharing";
+import OtherFrameworks from "../components/frameworkPage/otherFrameworks";
 
-const FrameworkHeader = styled.div`
-  padding: 50px;
-  backdrop-filter: blur(250px);
-  box-shadow: 0px 5px 5px rgba(57, 19, 184, 0.07);
-  margin: auto;
-`;
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: auto 
-  grid-gap: 20px;
-  justify-items: center; 
-  text-align: center; 
-  margin: auto;
-`;
-
-const SharingSection = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
-const EmbedSection = styled.section``;
-
-const Framework = ({ pageContext, data }) => {
+const Framework = ({ data }) => {
   const [isEmbedded, setIsEmbedded] = useState(false);
-  const { frameworkPath, appPath, siteUrl } = useSiteMetadata();
 
-  const framework = pageContext.name;
+  const { frameworkPath, appPath, siteUrl } = useSiteMetadata();
   const { strapiFrameworks, otherFrameworks } = data;
-  const allFrameworks = frameworksToArray(otherFrameworks.edges);
-  const slide = strapiFrameworks.frameworkSlide;
+
+  
 
   const embeddedHandler = () => {
     setIsEmbedded(!isEmbedded);
   };
 
-  console.log(strapiFrameworks);
   const { url } = urlPath(
     frameworkPath,
     appPath,
     siteUrl,
     strapiFrameworks.name
   );
-  const embeddedFrame = `<iframe
-  src="${url}"
-  name="iframe_a"
-  height="900px"
-  width="100%"
-  title="${strapiFrameworks.name}"
-></iframe>`;
+
+  const embeddedFrame = `<iframe src="${url} name="iframe_a" height="900px" width="100%" title="${strapiFrameworks.name}"></iframe>`;
 
   return (
     <Layout withHero={true}>
@@ -74,66 +42,14 @@ const Framework = ({ pageContext, data }) => {
         description={strapiFrameworks.description}
         image={strapiFrameworks.icon.publicURL}
       />
-      <FrameworkHeader
-        sx={{
-          variant: `layout.frameworkName`,
-          bg: `backgroundHeader`,
-          borderRadius: 15,
-        }}
-      >
-        <Grid>
-          <div sx={{ width: `120px`, p: 1 }}>
-            <Img fluid={strapiFrameworks.icon.childImageSharp.fluid} />
-          </div>
-          <h1 sx={{ color: `naturalDark` }}>{framework}</h1>
-        </Grid>
-        <h4 sx={{ color: `text` }}>{strapiFrameworks.teaser}</h4>
-        <h4 sx={{ color: `text`, fontWeight: `soft`, mt: 3 }}>
-          {strapiFrameworks.caption}
-        </h4>
-      </FrameworkHeader>
-      <section sx={{ variant: `layout.frameworkMain` }}>
-        <ReactMarkdown source={strapiFrameworks.description} />
-        <h3>Who could use this</h3>
-        <ReactMarkdown source={strapiFrameworks.whoToUse} />
-        <h3>Framework explanation</h3>
-        <ReactMarkdown source={strapiFrameworks.theFramework} />
-
-        {slide && (
-          <div>
-            <h3>Slide</h3>
-            <p>
-              Here you will find a slide example. Soon we will implement a
-              feature for anyone to download all the tools that we are building.
-            </p>
-            <Img fluid={slide.childImageSharp.fluid} />
-          </div>
-        )}
-      </section>
-      <SharingSection sx={{ variant: `layout.frameworkMain`, pt: `0px` }}>
-        <SocialSharing />
-        <IconButton
-          sx={{ variant: `buttons.share`, bg: `primary`, width: `auto` }}
-          onClick={embeddedHandler}
-        >
-          <p sx={{ color: `text2` }}>Embed</p>
-        </IconButton>
-      </SharingSection>
-
-      {isEmbedded && (
-        <EmbedSection sx={{ variant: `layout.frameworkMain` }}>
-          <Box p={4} color="text2" bg="naturalDark">
-            {embeddedFrame}
-          </Box>
-        </EmbedSection>
-      )}
-
-      <section sx={{ variant: `layout.frameworkOthers`, mb: 6 }}>
-        <h1 sx={{ textAlign: `center`, my: 4, color: `text` }}>
-          Other useful tools
-        </h1>
-        <FrameworkCardList allFrameworks={allFrameworks} />
-      </section>
+      <Header strapiFrameworks={strapiFrameworks} />
+      <FrameworkContent strapiFrameworks={strapiFrameworks} />
+      <FrameworkSharing
+        embeddedHandler={embeddedHandler}
+        embeddedFrame={embeddedFrame}
+        isEmbedded={isEmbedded}
+      />
+      <OtherFrameworks otherFrameworks={otherFrameworks.edges} />
       <FooterSubscription />
     </Layout>
   );
