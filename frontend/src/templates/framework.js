@@ -35,7 +35,6 @@ const Framework = ({ pageContext, data }) => {
   const { strapiFrameworks, otherFrameworks } = data;
   const allFrameworks = frameworksToArray(otherFrameworks.edges);
   const slide = strapiFrameworks.frameworkSlide;
-  console.log(slide);
 
   return (
     <Layout withHero={true}>
