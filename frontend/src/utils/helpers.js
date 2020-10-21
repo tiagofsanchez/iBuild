@@ -1,3 +1,6 @@
+
+const _ = require("lodash");
+
 export const frameworksToArray = (array) => {
   let allFrameworks = [];
   array.map((framework) => {
@@ -15,3 +18,10 @@ export const frameworksToArray = (array) => {
 export const LowerCaseString = (string) => {
   return string.charAt(0).toLowerCase() + string.substring(1);
 };
+
+
+export const urlPath = (frameworkPath, appPath , siteUrl, frameworkName ) => { 
+  const slug = `${appPath}${frameworkPath}/${_.kebabCase(frameworkName)}`
+  const url = `${siteUrl}${slug}`
+  return { slug , url}
+}

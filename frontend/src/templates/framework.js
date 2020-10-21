@@ -1,11 +1,13 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { IconButton, jsx, Box } from "theme-ui";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
 import ReactMarkdown from "react-markdown";
+import { useState } from "react";
 
-import { frameworksToArray } from "../utils/helpers";
+import useSiteMetadata from "../hooks/useSiteMetadata";
+import { frameworksToArray, urlPath } from "../utils/helpers";
 
 import { Layout } from "../components/shared/layout";
 import FrameworkCardList from "../components/shared/frameworkCardList";
@@ -27,14 +29,43 @@ const Grid = styled.div`
   justify-items: center; 
   text-align: center; 
   margin: auto;
- 
 `;
 
+const SharingSection = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const EmbedSection = styled.section``;
+
 const Framework = ({ pageContext, data }) => {
+  const [isEmbedded, setIsEmbedded] = useState(false);
+  const { frameworkPath, appPath, siteUrl } = useSiteMetadata();
+
   const framework = pageContext.name;
   const { strapiFrameworks, otherFrameworks } = data;
   const allFrameworks = frameworksToArray(otherFrameworks.edges);
   const slide = strapiFrameworks.frameworkSlide;
+
+  const embeddedHandler = () => {
+    setIsEmbedded(!isEmbedded);
+  };
+
+  console.log(strapiFrameworks);
+  const { url } = urlPath(
+    frameworkPath,
+    appPath,
+    siteUrl,
+    strapiFrameworks.name
+  );
+  const embeddedFrame = `<iframe
+  src="${url}"
+  name="iframe_a"
+  height="900px"
+  width="100%"
+  title="${strapiFrameworks.name}"
+></iframe>`;
 
   return (
     <Layout withHero={true}>
@@ -67,6 +98,7 @@ const Framework = ({ pageContext, data }) => {
         <ReactMarkdown source={strapiFrameworks.whoToUse} />
         <h3>Framework explanation</h3>
         <ReactMarkdown source={strapiFrameworks.theFramework} />
+
         {slide && (
           <div>
             <h3>Slide</h3>
@@ -78,9 +110,24 @@ const Framework = ({ pageContext, data }) => {
           </div>
         )}
       </section>
-      <section sx={{ variant: `layout.frameworkMain`, pt: `0px` }}>
+      <SharingSection sx={{ variant: `layout.frameworkMain`, pt: `0px` }}>
         <SocialSharing />
-      </section>
+        <IconButton
+          sx={{ variant: `buttons.share`, bg: `primary`, width: `auto` }}
+          onClick={embeddedHandler}
+        >
+          <p sx={{ color: `text2` }}>Embed</p>
+        </IconButton>
+      </SharingSection>
+
+      {isEmbedded && (
+        <EmbedSection sx={{ variant: `layout.frameworkMain` }}>
+          <Box p={4} color="text2" bg="naturalDark">
+            {embeddedFrame}
+          </Box>
+        </EmbedSection>
+      )}
+
       <section sx={{ variant: `layout.frameworkOthers`, mb: 6 }}>
         <h1 sx={{ textAlign: `center`, my: 4, color: `text` }}>
           Other useful tools

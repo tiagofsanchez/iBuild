@@ -29,6 +29,7 @@ const SEO = ({ title, description, image }) => {
     titleTemplate = ` ${siteTitle} - ${seo.title}`;
   }
 
+
   return (
     <Helmet
       htmlAttributes={{ siteLanguage }}

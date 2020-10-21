@@ -37,7 +37,6 @@ const FrameworkSample = ({ allFrameworks }) => {
     .filter((framework) => framework.type === frameType)
     .slice(0, 6);
 
-  console.log(selectedFrameworks);
   return (
     <div>
       <div sx={{ variant: `layout.main`, py: `0px` }}>

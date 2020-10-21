@@ -4,8 +4,7 @@ import styled from "@emotion/styled";
 
 import useSiteMetadata from "../../hooks/useSiteMetadata";
 import FrameworkCard from "./frameworkCard";
-
-const _ = require("lodash");
+import { urlPath } from "../../utils/helpers";
 
 const Container = styled.div`
   display: grid;
@@ -19,13 +18,18 @@ const Container = styled.div`
 `;
 
 const FrameworkCardList = ({ allFrameworks }) => {
-  const { frameworkPath, appPath } = useSiteMetadata();
+  const { frameworkPath, appPath, siteUrl } = useSiteMetadata();
 
   return (
     <Container>
       {allFrameworks.map((framework) => {
-        const url = `${appPath}${frameworkPath}/${_.kebabCase(framework.name)}`;
-        return <FrameworkCard {...framework} url={url} key={framework.name} />;
+        const { slug } = urlPath(
+          frameworkPath,
+          appPath,
+          siteUrl,
+          framework.name
+        );
+        return <FrameworkCard {...framework} url={slug} key={framework.name} />;
       })}
     </Container>
   );
