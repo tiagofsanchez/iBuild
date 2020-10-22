@@ -2,6 +2,7 @@
 import { jsx, IconButton, Close, Button } from "theme-ui";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
+import copy from "copy-to-clipboard";
 
 import SocialSharing from "../shared/socialSharing";
 
@@ -9,6 +10,13 @@ const SharingSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+`;
+
+const EmbedContainer = styled.section`
+  border: 2px solid;
+  padding: 8px;
+  margin-top: 20px;
+  background: white;
 `;
 
 const Pre = styled.pre`
@@ -19,6 +27,11 @@ const Pre = styled.pre`
 `;
 
 const FrameworkSharing = ({ embeddedHandler, embeddedFrame, isEmbedded }) => {
+
+  const copyHandler = () => {
+    copy(embeddedFrame);
+  };
+
   return (
     <SharingSection sx={{ variant: `layout.frameworkMain`, pt: `0px` }}>
       <SocialSharing />
@@ -29,17 +42,24 @@ const FrameworkSharing = ({ embeddedHandler, embeddedFrame, isEmbedded }) => {
         <p sx={{ color: `text2` }}>Embed</p>
       </IconButton>
       {isEmbedded && (
-        <div sx={{ mt: 4 }}>
-          <Close onClick={embeddedHandler} sx={{ color: `naturalDark` }} />
+        <EmbedContainer>
+          <Close
+            onClick={embeddedHandler}
+            sx={{ color: `naturalDark`, position: `right` }}
+          />
           <Pre sx={{ bg: `naturalDark` }}>{embeddedFrame}</Pre>
-          <Button sx={{ bg: `naturalDark`, border: `none` }}>
+          <Button
+            onClick={copyHandler}
+            sx={{ bg: `naturalDark`, border: `none`, float: `right` }}
+          >
             Copy embed code
           </Button>
-        </div>
+        </EmbedContainer>
       )}
     </SharingSection>
   );
 };
+
 
 FrameworkSharing.propTypes = {
   embeddedHandler: PropTypes.func.isRequired,

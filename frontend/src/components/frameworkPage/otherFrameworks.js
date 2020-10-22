@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import PropTypes from "prop-types";
 import { frameworksToArray } from "../../utils/helpers";
 import FrameworkCardList from "../shared/frameworkCardList";
 
@@ -14,6 +15,10 @@ const OtherFrameworks = ({ otherFrameworks }) => {
       <FrameworkCardList allFrameworks={allFrameworks} />
     </section>
   );
+};
+
+OtherFrameworks.propTypes = {
+  otherFrameworks: PropTypes.array.isRequired,
 };
 
 export default OtherFrameworks;

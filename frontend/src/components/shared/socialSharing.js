@@ -14,6 +14,7 @@ const SocialContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 44px) auto;
   grid-gap: 5px;
+  align-items: center;
 `;
 
 const SocialSharing = () => {

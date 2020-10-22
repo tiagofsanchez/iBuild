@@ -19,9 +19,7 @@ const Framework = ({ data }) => {
 
   const { frameworkPath, appPath, siteUrl } = useSiteMetadata();
   const { strapiFrameworks, otherFrameworks } = data;
-
   
-
   const embeddedHandler = () => {
     setIsEmbedded(!isEmbedded);
   };
