@@ -17,7 +17,11 @@ const HeaderContainer = styled.div`
 
 const DescriptionContainer = styled.div`
   display: grid;
+  height: 180px;
   padding: 16px;
+  @media (max-width: 690px) {
+    height: auto;
+  }
 `;
 
 const FrameworkCard = ({ name, teaser, caption, url, icon }) => {
@@ -35,8 +39,10 @@ const FrameworkCard = ({ name, teaser, caption, url, icon }) => {
           </Grid>
         </HeaderContainer>
         <DescriptionContainer>
+          <Grid>
           <p sx={{ m: `0px` }}>{teaser}</p>
           <p sx={{ variant: `text.tagline`, mt: `0px` }}>{caption}</p>
+          </Grid>
         </DescriptionContainer>
       </Link>
     </Card>
