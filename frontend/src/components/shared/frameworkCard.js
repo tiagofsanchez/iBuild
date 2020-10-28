@@ -40,8 +40,8 @@ const FrameworkCard = ({ name, teaser, caption, url, icon }) => {
         </HeaderContainer>
         <DescriptionContainer>
           <Grid>
-          <p sx={{ m: `0px` }}>{teaser}</p>
-          <p sx={{ variant: `text.tagline`, mt: `0px` }}>{caption}</p>
+            <p sx={{ m: `0px` }}>{teaser}</p>
+            <p sx={{ variant: `text.tagline`, mt: `0px` }}>{caption}</p>
           </Grid>
         </DescriptionContainer>
       </Link>
