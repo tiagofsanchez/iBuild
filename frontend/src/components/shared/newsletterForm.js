@@ -81,8 +81,8 @@ export const NewsletterForm = () => {
           </p>
           <FormContainer onSubmit={onFormSubmithandler}>
             <GridContainer>
-              <Input placeholder="😎 Your name" type="text" {...name} />
-              <Input placeholder="📫 Your email" type="email" {...email} />
+              <Input placeholder="Your name" type="text" {...name} />
+              <Input placeholder="Your email" type="email" {...email} />
             </GridContainer>
             <GridContainer>
               <Button
@@ -133,8 +133,8 @@ export const LightNewsletterForm = () => {
       </p>
       <FormContainer onSubmit={onFormSubmithandler}>
         <GridContainer>
-          <Input placeholder="😎 Your name" type="text" {...name} />
-          <Input placeholder="📫 Your email" type="email" {...email} />
+          <Input placeholder="Your name" type="text" {...name} />
+          <Input placeholder="Your email" type="email" {...email} />
         </GridContainer>
         <GridContainer>
           <Button

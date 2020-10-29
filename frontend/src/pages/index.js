@@ -8,6 +8,7 @@ import { frameworksToArray } from "../utils/helpers";
 import SEO from "../components/shared/seo";
 import { LandingPageLayout } from "../components/shared/layout";
 import Cta from "../components/homePage/cta";
+import Why from '../components/homePage/why';
 import Impact from "../components/homePage/impact";
 import Vector from "../svgs/vector.svg";
 import Vector2 from "../svgs/vector2.svg";
@@ -45,6 +46,9 @@ const Index = ({ data }) => {
         <Cta />
       </section>
       <Container>
+        <section sx={{ variant: `layout.main` }}>
+          <Why />
+        </section>
         <section sx={{ variant: `layout.main` }}>
           <Impact />
         </section>

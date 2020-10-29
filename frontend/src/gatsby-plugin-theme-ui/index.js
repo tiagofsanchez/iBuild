@@ -86,6 +86,13 @@ export default {
         mt: 4,
         mb: 2,
       },
+      h5: {
+        fontSize: [20, 24, 24],
+        fontFamily: "heading",
+        fontWeight: "heading",
+        color: "text"
+
+      },
       p: {
         fontSize: [17, 20, 20],
         fontFamily: "body",
