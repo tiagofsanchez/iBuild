@@ -19,11 +19,19 @@ const useImages = () => {
         }
         publicURL
       }
+      slides: file(relativePath: { eq: "LandingPageSlides.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
   const imgHero = data.hero.childImageSharp.fluid;
   const logo = data.logo.publicURL;
-  return { imgHero, logo };
+  const slides = data.slides.childImageSharp.fluid;
+  return { imgHero, logo, slides };
 };
 
 export default useImages;

@@ -17,7 +17,7 @@ import { NewsletterForm } from "../components/shared/newsletterForm";
 const Container = styled.div`
   display: grid;
   grid-gap: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 `;
 
 const VectorContainer = styled.div`
@@ -37,11 +37,11 @@ const Vector2Container = styled.div`
 const Index = ({ data }) => {
   const { allStrapiFrameworks } = data;
   const allFrameworks = frameworksToArray(allStrapiFrameworks.edges);
-  
+
   return (
     <LandingPageLayout>
       <SEO />
-      <section sx={{ variant: `layout.main`, mb: `200px` }}>
+      <section sx={{ variant: `layout.main`, mb: `100px` }}>
         <Cta />
       </section>
       <Container>
