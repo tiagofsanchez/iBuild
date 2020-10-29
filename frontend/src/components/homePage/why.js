@@ -47,7 +47,7 @@ const Why = () => {
           <div>
             <h5 sx={{ m: 0 }}>Pretty slides</h5>
             <p sx={{ my: 1, variant: `text.tagline` }}>
-              Don't spend time building slides, use this ones completely for free.
+              Don't spend time building slides, use ours completely for free.
             </p>
           </div>
         </WhyGrid>
