@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui";
+import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
 
 import { RiSlideshowLine } from "react-icons/ri";
