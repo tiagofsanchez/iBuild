@@ -90,16 +90,15 @@ export default {
         fontSize: [20, 24, 24],
         fontFamily: "heading",
         fontWeight: "heading",
-        color: "text"
-
+        color: "text",
       },
       p: {
         fontSize: [17, 20, 20],
         fontFamily: "body",
         fontWeight: "body",
         color: "text",
-        "&::selection": { 
-          bg:`backgroundHeader`,
+        "&::selection": {
+          bg: `backgroundHeader`,
         },
       },
       li: {
@@ -165,7 +164,7 @@ export default {
       border: `2px solid`,
       borderColor: `primary`,
     },
-    secondary: { 
+    secondary: {
       bg: `backgroundHeader`,
       color: `primary`,
       p: 1,

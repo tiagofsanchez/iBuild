@@ -4,15 +4,45 @@ import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import ReactMarkdown from "react-markdown";
 
+const renderers = {
+  link: (props) => {
+    return (
+      <a
+        sx={{
+          color: "primary",
+          textDecoration: "none",
+          "&:hover": {
+            background:
+              "-webkit-linear-gradient(209.68deg, #40C9FF 20.41%, #E81CFF 94.89%)",
+            color: "text2",
+          },
+        }}
+        {...props}
+        target="_blank"
+        aria-label={props.href}
+        rel="noreferrer"
+      >
+        {props.children}
+      </a>
+    );
+  },
+};
+
 const FrameworkContent = ({ strapiFrameworks }) => {
   const slide = strapiFrameworks.frameworkSlide;
   return (
     <section sx={{ variant: `layout.frameworkMain` }}>
-      <ReactMarkdown source={strapiFrameworks.description} />
+      <ReactMarkdown
+        source={strapiFrameworks.description}
+        renderers={renderers}
+      />
       <h3>Who could use this</h3>
-      <ReactMarkdown source={strapiFrameworks.whoToUse} />
+      <ReactMarkdown source={strapiFrameworks.whoToUse} renderers={renderers} />
       <h3>Framework explanation</h3>
-      <ReactMarkdown source={strapiFrameworks.theFramework} />
+      <ReactMarkdown
+        source={strapiFrameworks.theFramework}
+        renderers={renderers}
+      />
       {slide && (
         <div>
           <h3>Slide</h3>
