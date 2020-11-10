@@ -18,9 +18,7 @@ const renderers = {
           },
         }}
         {...props}
-        target="_blank"
         aria-label={props.href}
-        rel="noreferrer"
       >
         {props.children}
       </a>
