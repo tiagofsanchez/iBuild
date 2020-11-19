@@ -34,16 +34,16 @@ const FrameworkContent = ({ strapiFrameworks }) => {
         source={strapiFrameworks.description}
         renderers={renderers}
       />
-      <h3>Who could use this</h3>
+      <h3 id="who-could-use-this">Who could use this</h3>
       <ReactMarkdown source={strapiFrameworks.whoToUse} renderers={renderers} />
-      <h3>Framework explanation</h3>
+      <h3 id="framework-explanation">Framework explanation</h3>
       <ReactMarkdown
         source={strapiFrameworks.theFramework}
         renderers={renderers}
       />
       {slide && (
         <div>
-          <h3>Slide</h3>
+          <h3 id="slide">Slide</h3>
           <p>
             Here you will find a slide example. Soon we will implement a feature
             for anyone to download all the tools that we are building.

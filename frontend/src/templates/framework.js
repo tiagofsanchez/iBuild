@@ -10,6 +10,7 @@ import { Layout } from "../components/shared/layout";
 import FooterSubscription from "../components/shared/footerSubscription";
 import SEO from "../components/shared/seo";
 import Header from "../components/frameworkPage/header";
+import LinkHeaders from "../components/frameworkPage/LinkHeaders";
 import FrameworkContent from "../components/frameworkPage/frameworkContent";
 import FrameworkSharing from "../components/frameworkPage/frameworkSharing";
 import OtherFrameworks from "../components/frameworkPage/otherFrameworks";
@@ -19,7 +20,7 @@ const Framework = ({ data }) => {
 
   const { frameworkPath, appPath, siteUrl } = useSiteMetadata();
   const { strapiFrameworks, otherFrameworks } = data;
-  
+
   const embeddedHandler = () => {
     setIsEmbedded(!isEmbedded);
   };
@@ -41,6 +42,7 @@ const Framework = ({ data }) => {
         image={strapiFrameworks.icon.publicURL}
       />
       <Header strapiFrameworks={strapiFrameworks} />
+      <LinkHeaders strapiFrameworks={strapiFrameworks} />
       <FrameworkContent strapiFrameworks={strapiFrameworks} />
       <FrameworkSharing
         embeddedHandler={embeddedHandler}
