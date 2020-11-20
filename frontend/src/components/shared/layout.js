@@ -21,9 +21,15 @@ const HeroContainer = styled.div`
   grid-template-rows: repeat (2, auto);
 `;
 
+
 export const Layout = ({ children, withHero }) => {
   const [isOpen, setIsOpen] = useState(false);
   const backdropHandler = () => setIsOpen(!isOpen);
+
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]')
+  }
 
   return (
     <div>
