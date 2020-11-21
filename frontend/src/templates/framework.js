@@ -42,7 +42,6 @@ const Framework = ({ data }) => {
         image={strapiFrameworks.icon.publicURL}
       />
       <Header strapiFrameworks={strapiFrameworks} />
-      <LinkHeaders strapiFrameworks={strapiFrameworks} />
       <FrameworkContent strapiFrameworks={strapiFrameworks} />
       <FrameworkSharing
         embeddedHandler={embeddedHandler}

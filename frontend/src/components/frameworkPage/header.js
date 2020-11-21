@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
 
+import LinHeaders from "./linkHeaders";
+import LinkHeaders from "./linkHeaders";
+
 const FrameworkHeader = styled.div`
   padding: 50px;
   backdrop-filter: blur(250px);
@@ -21,7 +24,6 @@ const Grid = styled.div`
 `;
 
 const Header = ({ strapiFrameworks }) => {
-  
   return (
     <FrameworkHeader
       sx={{
@@ -37,15 +39,18 @@ const Header = ({ strapiFrameworks }) => {
         <h1 sx={{ color: `naturalDark` }}>{strapiFrameworks.name}</h1>
       </Grid>
       <h4 sx={{ color: `text` }}>{strapiFrameworks.teaser}</h4>
-      <h4 sx={{ color: `text`, fontWeight: `soft`, mt: 3 }}>
+      <h4 sx={{ color: `text`, fontWeight: `soft`, mt: 3, mb: 3 }}>
         {strapiFrameworks.caption}
       </h4>
+      <div sx={{mt:4}}>
+        <LinkHeaders strapiFrameworks={strapiFrameworks} />
+      </div>
     </FrameworkHeader>
   );
 };
 
-Header.propTypes ={ 
-    strapiFrameworks : PropTypes.object.isRequired 
-}
+Header.propTypes = {
+  strapiFrameworks: PropTypes.object.isRequired,
+};
 
 export default Header;

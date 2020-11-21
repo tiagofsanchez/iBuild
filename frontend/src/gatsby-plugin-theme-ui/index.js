@@ -210,8 +210,16 @@ export default {
       textDecoration: `none`,
       p: "10px 20px",
       borderRadius: 5,
-      "&:active": {
-        color: "primary2",
+    },
+    secondary: {
+      textDecoration: `none`,
+      color: `text2`,
+      p: "5px 10px",
+      borderRadius: 5,
+      bg: "rgb(131,82,253,0.5)",
+      textAlin: "center",
+      "&:hover": {
+        bg: `primary2`,
       },
     },
   },
