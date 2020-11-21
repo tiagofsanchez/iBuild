@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
 
-import LinHeaders from "./linkHeaders";
-import LinkHeaders from "./linkHeaders";
+import AnchorHeaders from "./anchorHeaders";
 
 const FrameworkHeader = styled.div`
   padding: 50px;
@@ -43,7 +42,7 @@ const Header = ({ strapiFrameworks }) => {
         {strapiFrameworks.caption}
       </h4>
       <div sx={{mt:4}}>
-        <LinkHeaders strapiFrameworks={strapiFrameworks} />
+        <AnchorHeaders strapiFrameworks={strapiFrameworks} />
       </div>
     </FrameworkHeader>
   );

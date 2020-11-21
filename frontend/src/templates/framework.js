@@ -10,7 +10,6 @@ import { Layout } from "../components/shared/layout";
 import FooterSubscription from "../components/shared/footerSubscription";
 import SEO from "../components/shared/seo";
 import Header from "../components/frameworkPage/header";
-import LinkHeaders from "../components/frameworkPage/LinkHeaders";
 import FrameworkContent from "../components/frameworkPage/frameworkContent";
 import FrameworkSharing from "../components/frameworkPage/frameworkSharing";
 import OtherFrameworks from "../components/frameworkPage/otherFrameworks";

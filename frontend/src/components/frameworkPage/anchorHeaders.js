@@ -11,10 +11,10 @@ const LinksContainer = styled.div`
   text-align: center;
 `;
 
-const LinkHeaders = ({ strapiFrameworks }) => {
+const AnchorHeaders = ({ strapiFrameworks }) => {
   const slide = strapiFrameworks.frameworkSlide;
   return (
-    <LinksContainer >
+    <LinksContainer>
       <a sx={{ variant: `links.secondary` }} href="#who-could-use-this">
         Who could use this
       </a>
@@ -30,8 +30,8 @@ const LinkHeaders = ({ strapiFrameworks }) => {
   );
 };
 
-LinkHeaders.propTypes = {
+AnchorHeaders.propTypes = {
   strapiFrameworks: PropTypes.object.isRequired,
 };
 
-export default LinkHeaders;
+export default AnchorHeaders;
