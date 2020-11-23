@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import Img from "gatsby-image";
 
 import useImages from "../../hooks/useImages";
+import DownloadButton from "./downloadButton";
 
 const Container = styled.div`
   display: grid;
@@ -27,22 +28,12 @@ const Impact = () => {
       </div>
       <div sx={{ gridArea: `text` }}>
         <p sx={{ variant: `text.tagline`, my: `0px` }}>
-          Download all our slides{" "}
-          <span
-            sx={{
-              variant: `text.caption`,
-              bg: `primary`,
-              color: `text2`,
-              p: 1,
-              borderRadius: 2,
-            }}
-          >
-            Coming soon
-          </span>
+          Download all our slides
         </p>
-        <h2 sx={{ my: `0px`, color: `text` }}>
+        <h2 sx={{ mt: `0px`, mb: 4, color: `text` }}>
           All you need to make an impact
         </h2>
+        <DownloadButton />
       </div>
     </Container>
   );
