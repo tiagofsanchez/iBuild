@@ -49,14 +49,14 @@ const Index = ({ data }) => {
         <section sx={{ variant: `layout.main` }}>
           <Why />
         </section>
-        <section sx={{ variant: `layout.main` }}>
-          <Impact />
-        </section>
         <section>
           <FrameworkSample allFrameworks={allFrameworks} />
           <VectorContainer>
             <Vector />
           </VectorContainer>
+        </section>
+        <section sx={{ variant: `layout.main` }}>
+          <Impact />
         </section>
         <section sx={{ variant: `layout.mainFrameworks` }}>
           <NewsletterForm />
