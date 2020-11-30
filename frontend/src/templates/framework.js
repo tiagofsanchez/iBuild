@@ -15,6 +15,7 @@ import FrameworkContent from "../components/frameworkPage/frameworkContent";
 import FrameworkSharing from "../components/frameworkPage/frameworkSharing";
 import OtherFrameworks from "../components/frameworkPage/otherFrameworks";
 import Comments from "../components/shared/comments";
+import { FaComment, FaCommentAlt } from "react-icons/fa";
 
 const Framework = ({ data }) => {
   const [isEmbedded, setIsEmbedded] = useState(false);
@@ -75,7 +76,10 @@ const Framework = ({ data }) => {
         }}
       >
         <div id="comments">
-          <h2 sx={{ color: `text`, mt: 0 }}>Comments</h2>
+          <h3 sx={{ mt: 0 }}>
+            {" "}
+            <FaComment size={30} sx={{ color: `primary` }} /> Comments
+          </h3>
           <Comments commentBox={commentBox} />
         </div>
       </section>
