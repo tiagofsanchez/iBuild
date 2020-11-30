@@ -8,7 +8,7 @@ const OtherFrameworks = ({ otherFrameworks }) => {
   const allFrameworks = frameworksToArray(otherFrameworks);
 
   return (
-    <section sx={{ variant: `layout.frameworkOthers`, mb: 6 }}>
+    <section sx={{ variant: `layout.frameworkOthers`}}>
       <h1 sx={{ textAlign: `center`, my: 4, color: `text` }}>
         Other useful tools
       </h1>

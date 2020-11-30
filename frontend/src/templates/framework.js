@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { graphql } from "gatsby";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import React from "react";
 
 import useSiteMetadata from "../hooks/useSiteMetadata";
 import { urlPath } from "../utils/helpers";
@@ -13,12 +14,29 @@ import Header from "../components/frameworkPage/header";
 import FrameworkContent from "../components/frameworkPage/frameworkContent";
 import FrameworkSharing from "../components/frameworkPage/frameworkSharing";
 import OtherFrameworks from "../components/frameworkPage/otherFrameworks";
+import Comments from "../components/shared/comments";
 
 const Framework = ({ data }) => {
   const [isEmbedded, setIsEmbedded] = useState(false);
-
   const { frameworkPath, appPath, siteUrl } = useSiteMetadata();
   const { strapiFrameworks, otherFrameworks } = data;
+  const commentBox = React.createRef();
+
+  useEffect(() => {
+    const commentScript = document.createElement("script");
+    commentScript.async = true;
+    commentScript.src = "https://utteranc.es/client.js";
+    commentScript.setAttribute("repo", "tiagofsanchez/iBuild-comments"); // PLEASE CHANGE THIS
+    commentScript.setAttribute("issue-term", "pathname");
+    commentScript.setAttribute("id", "utterances");
+    commentScript.setAttribute("theme", "github-light");
+    commentScript.setAttribute("crossorigin", "anonymous");
+    if (commentBox && commentBox.current) {
+      commentBox.current.appendChild(commentScript);
+    } else {
+      console.log(`Error adding utterances comments on: ${commentBox}`);
+    }
+  }, [commentBox]);
 
   const embeddedHandler = () => {
     setIsEmbedded(!isEmbedded);
@@ -48,6 +66,19 @@ const Framework = ({ data }) => {
         isEmbedded={isEmbedded}
       />
       <OtherFrameworks otherFrameworks={otherFrameworks.edges} />
+      <section
+        sx={{
+          variant: `layout.frameworkMain`,
+          my: 5,
+          bg: `rgba(231,230,255,0.5)`,
+          borderRadius: 10,
+        }}
+      >
+        <div id="comments">
+          <h2 sx={{ color: `text`, mt: 0 }}>Comments</h2>
+          <Comments commentBox={commentBox} />
+        </div>
+      </section>
       <FooterSubscription />
     </Layout>
   );
