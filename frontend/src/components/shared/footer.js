@@ -21,15 +21,19 @@ const Footer = () => {
     <FooterContainer sx={{ bg: `naturalDark` }}>
       <footer sx={{ variant: `layout.footer`, textAlign: `center` }}>
         <Flex>
-          <p sx={{ my: `0px`, mx: `10px`, color: `text2` }}>Designed by</p>
-          <Link
-            href="https://www.tiagofsanchez.com/"
-            target="_blank"
-            rel="noreferrer"
-            sx={{ variant: `links.primary`, color: `text2`, padding: `0px` }}
-          >
-            Tiago F. Sanchez
-          </Link>
+          <p sx={{ my: `0px`, color: `text2` }}>
+            Designed by{" "}
+            <span>
+              <a
+                href="https://www.tiagofsanchez.com/"
+                target="_blank"
+                rel="noreferrer"
+                sx={{ color: `text2`, textDecoration: `none` }}
+              >
+                Tiago
+              </a>
+            </span>
+          </p>
         </Flex>
       </footer>
     </FooterContainer>
