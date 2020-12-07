@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Link } from "theme-ui";
 import styled from "@emotion/styled";
-import tfs from "../../images/tfs_logo.png";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -23,9 +22,14 @@ const Footer = () => {
       <footer sx={{ variant: `layout.footer`, textAlign: `center` }}>
         <Flex>
           <p sx={{ my: `0px`, mx: `10px`, color: `text2` }}>Designed by</p>
-          <a href="https://www.tiagofsanchez.com/" target="_blank" rel="noreferrer">
-            <img src={tfs} width="25px" alt="Tiago F Sanchez" />
-          </a>
+          <Link
+            href="https://www.tiagofsanchez.com/"
+            target="_blank"
+            rel="noreferrer"
+            sx={{ variant: `links.primary`, color: `text2`, padding: `0px` }}
+          >
+            Tiago F. Sanchez
+          </Link>
         </Flex>
       </footer>
     </FooterContainer>
