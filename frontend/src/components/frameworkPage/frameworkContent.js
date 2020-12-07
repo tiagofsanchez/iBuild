@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 
 const renderers = {
   link: (props) => {
+    console.log(props);
     return (
       <a
         sx={{
@@ -22,6 +23,15 @@ const renderers = {
       >
         {props.children}
       </a>
+    );
+  },
+  image: ({ alt, src }) => {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        sx={{ variant: `layout.frameworkMain`, p: 0, margin: `auto` }}
+      />
     );
   },
 };
