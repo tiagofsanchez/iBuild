@@ -8,7 +8,7 @@ import { frameworksToArray } from "../utils/helpers";
 import SEO from "../components/shared/seo";
 import { LandingPageLayout } from "../components/shared/layout";
 import Cta from "../components/homePage/cta";
-import Why from '../components/homePage/why';
+import Why from "../components/homePage/why";
 import Impact from "../components/homePage/impact";
 import Vector from "../svgs/vector.svg";
 import Vector2 from "../svgs/vector2.svg";
@@ -48,6 +48,20 @@ const Index = ({ data }) => {
       <Container>
         <section sx={{ variant: `layout.main` }}>
           <Why />
+          <div sx={{ textAlign: `center`, mt: 5 }}>
+            <a
+              href="https://www.producthunt.com/posts/framsup?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-framsup"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=272954&theme=dark"
+                alt="Framsup - The frameworks you need to power your growth. | Product Hunt"
+                width="250"
+                height="54"
+              />
+            </a>
+          </div>
         </section>
         <section>
           <FrameworkSample allFrameworks={allFrameworks} />

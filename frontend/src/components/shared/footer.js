@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Link } from "theme-ui";
+import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
 
 const FooterContainer = styled.div`
