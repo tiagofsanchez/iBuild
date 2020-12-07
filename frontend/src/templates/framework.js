@@ -15,7 +15,7 @@ import FrameworkContent from "../components/frameworkPage/frameworkContent";
 import FrameworkSharing from "../components/frameworkPage/frameworkSharing";
 import OtherFrameworks from "../components/frameworkPage/otherFrameworks";
 import Comments from "../components/shared/comments";
-import { FaComment, FaCommentAlt } from "react-icons/fa";
+import { FaComment } from "react-icons/fa";
 
 const Framework = ({ data }) => {
   const [isEmbedded, setIsEmbedded] = useState(false);
